@@ -12,6 +12,12 @@ return {
             require("mason-lspconfig").setup_handlers({
                 function(server)
                     require("lspconfig")[server].setup({
+                        ensure_installed = {
+                            "html",
+                            "lua_ls",
+                            "gopls",
+                            "ts_ls",
+                        },
                         -- Language server
                         init_options = {
                             -- hostInfo = "neovim",

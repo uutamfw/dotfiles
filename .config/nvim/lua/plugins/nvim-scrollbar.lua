@@ -1,7 +1,6 @@
 return {
-    "petertriho/nvim-scrollbar",
-    -- dependencies = "kevinhwang91/nvim-hlslens",
+    "lewis6991/satellite.nvim",
     config = function()
-        require("scrollbar").setup({ handle = { color = "#2fe0c5" } })
+        require("satellite").setup()
     end,
 }
