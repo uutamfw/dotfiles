@@ -154,7 +154,10 @@ alias cdd='cd ~/dotfiles'
 alias cdg='cd ~/gas-workout-logs'
 
 ## Surfingkeys-conf
-alias cdl='cd ~/surfingkeys-conf'
+alias cdm='cd ~/surfingkeys-conf'
+
+## LangUp
+alias cdl='cd ~/LangUp'
 
 ## Hammerspoon
 alias cdh='cd ~/.hammerspoon'
@@ -271,6 +274,9 @@ export PATH=$PATH:$GOPATH/bin
 
 # surfingkeys gulp
 export PATH=$PATH:$HOME/surfingkeys-conf/node_modules/.bin
+
+# LangUp
+export PYTHONPATH="$HOME/LangUp/project"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
