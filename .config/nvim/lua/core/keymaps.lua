@@ -83,6 +83,7 @@ keymap("n", "<Leader>gb", "<cmd>Telescope git_branches theme=get_ivy<CR>")
 keymap("n", "<Leader>gs", "<cmd>Telescope git_status theme=get_ivy<CR>")
 keymap("n", "<Leader>fk", "<cmd>Telescope lsp_document_symbols theme=get_ivy<CR>")
 keymap("n", "<Leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
+keymap("n", "<Leader>fh", "<cmd>Telescope command_history<CR>")
 
 -- text-case.nvim
 keymap("n", "gau", "<cmd>:lua require('textcase').current_word('to_upper_case')<CR>")
