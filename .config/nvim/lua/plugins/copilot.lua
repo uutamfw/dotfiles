@@ -1,5 +1,7 @@
 return {
     "zbirenbaum/copilot.lua",
+    lazy = true, -- 遅延読み込みを有効化
+    event = "InsertEnter", -- Insertモードに入ったときに読み込む
     config = function()
         require("copilot").setup({
             panel = {

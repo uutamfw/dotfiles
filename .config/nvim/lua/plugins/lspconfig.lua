@@ -5,9 +5,6 @@ return {
         -- Mason
         "williamboman/mason-lspconfig.nvim",
         config = function()
-            require("lspconfig").dartls.setup({
-                cmd = { "dart", "language-server", "--protocol=lsp" },
-            })
             require("mason").setup()
             require("mason-lspconfig").setup_handlers({
                 function(server)
@@ -15,7 +12,6 @@ return {
                         ensure_installed = {
                             "html",
                             "lua_ls",
-                            "gopls",
                             "ts_ls",
                         },
                         -- Language server
@@ -52,6 +48,21 @@ return {
                         --     Lua = { diagnostics = { globals = { "vim" } } },
                         -- },
                     })
+                end,
+            })
+            require("lspconfig").dartls.setup({
+                cmd = { "dart", "language-server", "--protocol=lsp" },
+            })
+            require("lspconfig").gopls.setup({
+                cmd = { "gopls", "-rpc.trace", "--debug=localhost:6060" },
+                settings = {
+                    gopls = {
+                        experimentalWorkspaceModule = true,
+                    },
+                },
+                on_attach = function(client, bufnr)
+                    client.server_capabilities.documentFormattingProvider = true
+                    client.server_capabilities.documentRangeFormattingProvider = true
                 end,
             })
             vim.opt.completeopt = "menu,menuone,noselect"
