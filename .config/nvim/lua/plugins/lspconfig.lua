@@ -61,8 +61,9 @@ return {
                     },
                 },
                 on_attach = function(client, bufnr)
-                    client.server_capabilities.documentFormattingProvider = true
-                    client.server_capabilities.documentRangeFormattingProvider = true
+                    client.server_capabilities.documentFormattingProvider = false
+                    client.server_capabilities.documentRangeFormattingProvider = false
+                    client.server_capabilities.semanticTokensProvider = false
                 end,
             })
             vim.opt.completeopt = "menu,menuone,noselect"
