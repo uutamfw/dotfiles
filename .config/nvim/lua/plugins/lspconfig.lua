@@ -60,6 +60,14 @@ return {
                         experimentalWorkspaceModule = true,
                     },
                 },
+                        init_options = {
+                            preferences = {
+                                importModuleSpecifierEnding = "minimal",
+                                importModuleSpecifierPreference = "non-relative",
+                                includeCompletionsForImportStatements = true,
+                                includeCompletionsForModuleExports = true,
+                            },
+                        },
                 on_attach = function(client, bufnr)
                     client.server_capabilities.documentFormattingProvider = false
                     client.server_capabilities.documentRangeFormattingProvider = false
