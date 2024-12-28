@@ -259,6 +259,7 @@ export PATH="/usr/local/opt/node@14/bin:$PATH"
 export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
 ### End of Zinit's installer chunk
 
+
 # python
 # export PATH="/opt/homebrew/Cellar/python@3.10/3.10.11/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
@@ -314,3 +315,5 @@ unset __conda_setup
 
 export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
