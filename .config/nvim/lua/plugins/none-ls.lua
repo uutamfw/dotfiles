@@ -19,11 +19,10 @@ function M.config()
         -- https://github.com/nvimtools/none-ls.nvim/issues/58
         -- null_ls.builtins.formatting.rustfmt.with({filetypes = {"rust"}}),
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.dart_format,
         null_ls.builtins.formatting.gofmt,
+        null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.prettierd,
-        -- null_ls.builtins.formatting.yamlfmt,
         null_ls.builtins.diagnostics.phpmd.with({ filetypes = { "php" } }),
     }
     -- if you want to set up formatting on save, you can use this as a callback

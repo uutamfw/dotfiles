@@ -15,7 +15,6 @@ return {
             -- diagnostics
             "none-ls-external-sources.diagnostics.eslint",
             "none-ls-external-sources.diagnostics.eslint_d",
-            -- "none-ls-external-sources.diagnostics.yamllint",
 
             -- formatting
             -- "none-ls-external-sources.formatting.eslint_d",

@@ -1,3 +1,10 @@
+local lsp_servers = {
+    "html",
+    "lua_ls",
+    "ts_ls",
+    "pyright",
+}
+
 return {
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
@@ -9,14 +16,12 @@ return {
             require("mason-lspconfig").setup_handlers({
                 function(server)
                     require("lspconfig")[server].setup({
+                        -- Let mason-lspconfig install the defined servers
                         ensure_installed = {
-                            "html",
-                            "lua_ls",
-                            "ts_ls",
+                            lsp_servers,
                         },
                         -- Language server
                         init_options = {
-                            -- hostInfo = "neovim",
                             preferences = {
                                 importModuleSpecifierEnding = "minimal",
                                 importModuleSpecifierPreference = "non-relative",
@@ -44,9 +49,6 @@ return {
                                 }
                             ),
                         },
-                        -- settings = {
-                        --     Lua = { diagnostics = { globals = { "vim" } } },
-                        -- },
                     })
                 end,
             })
@@ -60,14 +62,14 @@ return {
                         experimentalWorkspaceModule = true,
                     },
                 },
-                        init_options = {
-                            preferences = {
-                                importModuleSpecifierEnding = "minimal",
-                                importModuleSpecifierPreference = "non-relative",
-                                includeCompletionsForImportStatements = true,
-                                includeCompletionsForModuleExports = true,
-                            },
-                        },
+                init_options = {
+                    preferences = {
+                        importModuleSpecifierEnding = "minimal",
+                        importModuleSpecifierPreference = "non-relative",
+                        includeCompletionsForImportStatements = true,
+                        includeCompletionsForModuleExports = true,
+                    },
+                },
                 on_attach = function(client, bufnr)
                     client.server_capabilities.documentFormattingProvider = false
                     client.server_capabilities.documentRangeFormattingProvider = false
