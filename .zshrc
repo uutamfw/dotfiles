@@ -141,9 +141,6 @@ alias cdt='cd ~/trander'
 alias cdf='cd ~/trander_flutter'
 alias cdr='cd ~/trander-rust'
 
-## Aftgr-Clean-Install
-alias cda='cd ~/after-clean-install'
-
 ## WezTerm
 alias cdw='cd ~/.config/WezTerm'
 
@@ -178,7 +175,7 @@ alias vg='vi ~/.gvimrc'
 alias nn='nvim'
 alias nnz='nvim ~/dotfiles/.zshrc'
 alias nni='nvim ~/dotfiles/.config/nvim/init.lua'
-alias nnb='nvim ~/after-clean-install/Brewfile'
+alias nnb='nvim ~/dotfiles/Brewfile'
 alias nng='nvim ~/dotfiles/.config/ghostty/config'
 
 ### symlink the nvim folder
