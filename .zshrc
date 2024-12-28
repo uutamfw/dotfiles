@@ -179,12 +179,15 @@ alias nn='nvim'
 alias nnz='nvim ~/dotfiles/.zshrc'
 alias nni='nvim ~/dotfiles/.config/nvim/init.lua'
 alias nnb='nvim ~/after-clean-install/Brewfile'
+alias nng='nvim ~/dotfiles/.config/ghostty/config'
 
 ### symlink the nvim folder
 ### if the symlink does not exist
 if [ ! -L ~/.config/nvim ]; then
     ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 fi
+
+ln -s ~/dotfiles/.config/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
 ## php
 alias php7.0='/Applications/MAMP/bin/php/php7.0.33/bin/php'
@@ -208,12 +211,6 @@ function find_cd() {
     cd "$(find . -type d | peco)"
 }
 alias fc="find_cd"
-
-# ssh config
-alias dev-car="source ~/.dev-car.sh "
-alias car-u="source ~/.car-u.sh "
-alias car-a="source ~/.car-a.sh "
-alias car-gw="source ~/.car-gw.sh"
 
 # medis
 alias medis="source ~/bin/medis"
