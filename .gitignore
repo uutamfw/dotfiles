@@ -1,3 +1,4 @@
 .zshrc.zwc
 .DS_Store
 repomix-output.txt
+**/apps.json
