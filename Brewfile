@@ -56,6 +56,7 @@ brew "bottom"
 brew "dust"
 brew "procs"
 brew "zllij"
+brew "pyenv"
 
 # Go
 brew "gopls"

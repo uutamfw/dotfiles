@@ -58,6 +58,10 @@ export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 # WezTerm
 export WEZTERM_CONFIG_FILE="$HOME/dotfiles/.config/wezterm/wezterm.lua"
 
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+
 ### Added by Zinit's installer
 if [[ ! -f /opt/homebrew/Cellar/zinit/3.7/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
