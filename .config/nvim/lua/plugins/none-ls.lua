@@ -23,8 +23,8 @@ function M.config()
         null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.prettierd,
-        null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.isort,
+        -- null_ls.builtins.formatting.black,
+        -- null_ls.builtins.formatting.isort,
         null_ls.builtins.diagnostics.phpmd.with({ filetypes = { "php" } }),
     }
     -- if you want to set up formatting on save, you can use this as a callback
@@ -59,7 +59,7 @@ function M.config()
                 })
             end
         end,
-        debug = true,
+        debug = false,
     })
 end
 
