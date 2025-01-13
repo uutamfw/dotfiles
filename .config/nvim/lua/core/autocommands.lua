@@ -2,14 +2,14 @@ local api = vim.api
 
 -- Copy path name
 api.nvim_create_user_command("CpPath", function()
-    local path = vim.fn.expand('%:p:.')
+    local path = vim.fn.expand("%:p:.")
     vim.fn.setreg("+", path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 
 -- Copy file name
 api.nvim_create_user_command("CpFileName", function()
-    local path = vim.fn.expand('%:t:r')
+    local path = vim.fn.expand("%:t:r")
     vim.fn.setreg("+", path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
@@ -17,15 +17,17 @@ end, {})
 -- Clipboard substitution
 api.nvim_create_user_command("SubClipboard", function()
     local text = vim.fn.input("Input replacing text:")
-    local clipboard = vim.fn.getreg('*')
-    vim.fn.execute(':%s/' .. clipboard .. '/' .. text .. '/g')
+    local clipboard = vim.fn.getreg("*")
+    vim.fn.execute(":%s/" .. clipboard .. "/" .. text .. "/g")
     vim.notify('Substituted with "' .. text .. '"!')
 end, {})
 
 -- Store the cursor point at last
-api.nvim_create_autocmd({"BufReadPost"}, {
-    pattern = {"*"},
-    callback = function() vim.api.nvim_exec('silent! normal! g`"zv', false) end
+api.nvim_create_autocmd({ "BufReadPost" }, {
+    pattern = { "*" },
+    callback = function()
+        vim.api.nvim_exec('silent! normal! g`"zv', false)
+    end,
 })
 
 -- To stop beginning from insert mode
@@ -33,9 +35,23 @@ api.nvim_create_autocmd({"BufReadPost"}, {
 api.nvim_create_autocmd("WinLeave", {
     callback = function()
         if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
-            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true,
-                                                                 false, true),
-                                  "i", false)
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "i", false)
         end
-    end
+    end,
 })
+
+-- Automatically run npx repomix when saving a file
+if vim.fn.getcwd():find("~/dotfiles/.config/nvim") then
+    api.nvim_create_autocmd("BufWritePost", {
+        pattern = "*",
+        callback = function()
+            local cmd = "npx repomix"
+            local output = vim.fn.system(cmd)
+            if vim.v.shell_error ~= 0 then
+                vim.notify("Error running 'npx repomix': " .. output, vim.log.levels.ERROR)
+            else
+                vim.notify("npx repomix executed successfully!", vim.log.levels.INFO)
+            end
+        end,
+    })
+end
