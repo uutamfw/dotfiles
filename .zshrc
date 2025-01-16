@@ -170,7 +170,7 @@ alias cdb='cd ~/astro-blog'
 alias cdn='cd ~/gg-newsletter-for-biz-packages'
 
 ## npc
-alias cdn='cd ~/npc-qa-bot'
+alias cdp='cd ~/npc-qa-bot'
 
 ## To parent group-directoris
 alias a='cd ../'
