@@ -58,6 +58,7 @@ brew "procs"
 brew "zllij"
 brew "pyenv"
 brew "go-task/tap/go-task"
+brew "rye"
 
 # Go
 brew "gopls"
