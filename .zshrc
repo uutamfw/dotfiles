@@ -166,6 +166,9 @@ alias cdh='cd ~/.hammerspoon'
 ## astro-blog
 alias cdb='cd ~/astro-blog'
 
+## gg
+alias cdn='cd ~/gg-newsletter-for-biz-packages'
+
 ## To parent group-directoris
 alias a='cd ../'
 alias aa='cd ../../'
