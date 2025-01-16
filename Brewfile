@@ -57,6 +57,7 @@ brew "dust"
 brew "procs"
 brew "zllij"
 brew "pyenv"
+brew "go-task/tap/go-task"
 
 # Go
 brew "gopls"
