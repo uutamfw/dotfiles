@@ -2,7 +2,7 @@ local lsp_servers = {
     "html",
     "lua_ls",
     "ts_ls",
-    -- "pyright",
+    "pyright",
 }
 
 return {
@@ -79,19 +79,36 @@ return {
             require("lspconfig").pyright.setup({
                 settings = {
                     pyright = {
-                        -- Using Ruff's import organizer
                         disableOrganizeImports = true,
+                        disableTaggedHints = true,
                     },
                     python = {
-                        diagnosticSeverityOverrides = {
-                            -- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
-                            reportUndefinedVariable = "none",
+                        analysis = {
+                            autoSearchPaths = true,
+                            diagnosticMode = "workspace",
+                            typeCheckingMode = "standard",
+                            useLibraryCodeForTypes = true,
+                            -- we can this setting below to redefine some diagnostics
+                            diagnosticSeverityOverrides = {
+                                deprecateTypingAliases = false,
+                            },
+                            -- inlay hint settings are provided by pylance?
+                            inlayHints = {
+                                callArgumentNames = "partial",
+                                functionReturnTypes = true,
+                                pytestParameters = true,
+                                variableTypes = true,
+                            },
                         },
                     },
                 },
             })
             require("lspconfig").ruff.setup({
                 init_options = {
+                    -- the settings can be found here: https://docs.astral.sh/ruff/editors/settings/
+                    settings = {
+                        organizeImports = true,
+                    },
                     preferences = {
                         importModuleSpecifierEnding = "minimal",
                         importModuleSpecifierPreference = "non-relative",
@@ -99,17 +116,19 @@ return {
                         includeCompletionsForModuleExports = true,
                     },
                 },
-                on_attach = function(client, bufnr)
-                    -- 必要に応じて on_attach 関数を追加
-                    print("Pyright attached to buffer " .. bufnr)
-                end,
-                handlers = {
-                    ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-                        virtual_text = true,
-                        signs = true,
-                        underline = true,
-                    }),
-                },
+                -- on_attach = function(client, bufnr)
+                --     if client.name == "ruff_lsp" then
+                --         -- Disable hover in favor of Pyright
+                --         client.server_capabilities.hoverProvider = false
+                --     end
+                -- end,
+                -- handlers = {
+                --     ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+                --         virtual_text = true,
+                --         signs = true,
+                --         underline = true,
+                --     }),
+                -- },
             })
             vim.opt.completeopt = "menu,menuone,noselect"
         end,
