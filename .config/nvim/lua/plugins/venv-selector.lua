@@ -4,8 +4,8 @@ return {
     config = function()
         require("venv-selector").setup({
             -- Your options go here
-            -- name = "venv",
-            -- auto_refresh = false
+            -- auto_refresh = false,
+            -- search from workspace root
             search = false,
             search_workspace = true,
             name = { "venv", ".venv" },
