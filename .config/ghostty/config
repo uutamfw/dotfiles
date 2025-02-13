@@ -13,3 +13,5 @@ keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+k=goto_split:top
 keybind = option+h=previous_tab
 keybind = option+l=next_tab
+unbind = ctrl+l
+unbind = ctrl+h
