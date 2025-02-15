@@ -1,9 +1,40 @@
+local log = require("core.log")
+local util = require("lspconfig.util")
+
 local lsp_servers = {
     "html",
     "lua_ls",
     "ts_ls",
     "pyright",
+    "pylsp",
+    "python-lsp-server",
 }
+
+local function is_installed(bin)
+    local result = vim.fn.executable(bin) == 1
+    log.dlog("[DEBUG] Checking executable: " .. bin .. " -> " .. tostring(result))
+    return result
+end
+
+is_installed("pyright-langserver")
+is_installed("mypy")
+is_installed("pylsp")
+is_installed("python-lsp-server")
+
+local function get_python_path(workspace)
+    if vim.env.VIRTUAL_ENV then
+        return vim.env.VIRTUAL_ENV .. "/bin/python"
+    end
+    -- workspace内に.venvまたはvenvがあるかチェック
+    for _, pattern in ipairs({ ".venv", "venv" }) do
+        local venv_path = util.path.join(workspace, pattern)
+        if util.path.exists(venv_path) then
+            return venv_path .. "/bin/python"
+        end
+    end
+    -- なければシステムのpythonをフォールバック
+    return "python"
+end
 
 return {
     "neovim/nvim-lspconfig",
@@ -76,9 +107,34 @@ return {
                     client.server_capabilities.semanticTokensProvider = false
                 end,
             })
-            require("lspconfig").pyright.setup({
+            require("lspconfig").pylsp.setup({
+                on_new_config = function(new_config, workspace)
+                    log.dlog("[DEBUG] workspace" .. tostring(workspace))
+                    log.dlog("[DEBUG] get_python_path" .. tostring(get_python_path(workspace)))
+                    new_config.cmd = {
+                        "/Users/yutaaoki/gg-newsletter-for-biz-packages/packages/core-api/.venv/bin/python",
+                        "-m",
+                        "pylsp",
+                    }
+                end,
+                root_dir = util.root_pattern(".git", ".venv", "setup.py", "pyproject.toml"),
+                init_options = {
+                    preferences = {
+                        importModuleSpecifierEnding = "minimal",
+                        importModuleSpecifierPreference = "non-relative",
+                        includeCompletionsForImportStatements = true,
+                        includeCompletionsForModuleExports = true,
+                    },
+                },
                 settings = {
-                    pyright = {
+                    pylsp = {
+                        plugins = {
+                            ruff = {
+                                enabled = true,
+                            },
+                            pylsp_mypy = { enabled = true },
+                            pylsp_black = { enabled = true },
+                        },
                         disableOrganizeImports = true,
                         disableTaggedHints = true,
                     },
@@ -102,33 +158,6 @@ return {
                         },
                     },
                 },
-            })
-            require("lspconfig").ruff.setup({
-                init_options = {
-                    -- the settings can be found here: https://docs.astral.sh/ruff/editors/settings/
-                    settings = {
-                        organizeImports = true,
-                    },
-                    preferences = {
-                        importModuleSpecifierEnding = "minimal",
-                        importModuleSpecifierPreference = "non-relative",
-                        includeCompletionsForImportStatements = true,
-                        includeCompletionsForModuleExports = true,
-                    },
-                },
-                -- on_attach = function(client, bufnr)
-                --     if client.name == "ruff_lsp" then
-                --         -- Disable hover in favor of Pyright
-                --         client.server_capabilities.hoverProvider = false
-                --     end
-                -- end,
-                -- handlers = {
-                --     ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-                --         virtual_text = true,
-                --         signs = true,
-                --         underline = true,
-                --     }),
-                -- },
             })
             vim.opt.completeopt = "menu,menuone,noselect"
         end,

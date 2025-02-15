@@ -20,6 +20,12 @@ function M.config()
         -- null_ls.builtins.formatting.rustfmt.with({filetypes = {"rust"}}),
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.dart_format,
+        null_ls.builtins.diagnostics.mypy.with({
+            extra_args = function()
+                local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or "/usr"
+                return { "--python-executable", virtual .. "/bin/python3" }
+            end,
+        }),
         null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.prettierd.with({

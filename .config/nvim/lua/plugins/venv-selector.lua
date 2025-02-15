@@ -6,8 +6,8 @@ return {
             -- Your options go here
             -- auto_refresh = false,
             -- search from workspace root
-            search = false,
-            search_workspace = true,
+            -- search = false,
+            -- search_workspace = true,
             name = { "venv", ".venv" },
         })
     end,
