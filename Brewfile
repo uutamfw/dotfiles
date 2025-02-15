@@ -121,6 +121,7 @@ cask "superproductivity"
 cask "cursor"
 cask "alacritty"
 cask "ghostty"
+cask "microsoft-teams"
 
 # WezTerm
 tap "wez/wezterm"
