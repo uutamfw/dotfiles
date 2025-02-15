@@ -108,7 +108,7 @@ alias gps='git push'
 alias gpl='git pull origin'
 alias gpm='git pull origin master'
 alias gmm='git merge origin/master'
-alias gmm='git merge origin/main'
+alias gmmm='git merge origin/main'
 alias gmp='git merge origin/feature-beagle-post-performance'
 alias gcp='git checkout feature-beagle-post-performance'
 alias gr-s='git reset --soft HEAD^'
@@ -273,7 +273,8 @@ export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
 # python
 # export PATH="/opt/homebrew/Cellar/python@3.10/3.10.11/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
-# Changed path for python@3.8
+# Changed path for rye
+export PATH="$HOME/.rye/shims:$PATH"
 export PATH="/opt/homebrew/opt/python@3.8/libexec/bin:$PATH"
 export PATH="/opt/homebrew/bin/conda:$PATH"
 
@@ -325,5 +326,6 @@ unset __conda_setup
 
 export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
+
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
