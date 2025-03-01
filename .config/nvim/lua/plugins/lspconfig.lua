@@ -16,8 +16,6 @@ local function is_installed(bin)
     return result
 end
 
-is_installed("pyright-langserver")
-is_installed("mypy")
 is_installed("pylsp")
 is_installed("python-lsp-server")
 
@@ -68,6 +66,7 @@ return {
                         handlers = {
                             -- TODO: diagnostic configuration
                             -- https://neovim.io/doc/user/lsp.html#lsp-api
+                            -- https://chat.deepseek.com/a/chat/s/eb212534-64c8-4907-afe5-4d22a51543a3
                             ["textDocument/publishDiagnostics"] = vim.lsp.with(
                                 vim.lsp.diagnostic.on_publish_diagnostics,
                                 {
@@ -117,6 +116,11 @@ return {
                         "pylsp",
                     }
                 end,
+                on_attach = function(client)
+                    -- Disable formatting
+                    client.server_capabilities.documentFormattingProvider = false
+                    client.server_capabilities.documentRangeFormattingProvider = false
+                end,
                 root_dir = util.root_pattern(".git", ".venv", "setup.py", "pyproject.toml"),
                 init_options = {
                     preferences = {
@@ -126,17 +130,40 @@ return {
                         includeCompletionsForModuleExports = true,
                     },
                 },
+                handlers = {
+                    ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+                        virtual_text = true,
+                        signs = true,
+                        update_in_insert = true,
+                        underline = true,
+                        open = false,
+                    }),
+                },
                 settings = {
                     pylsp = {
                         plugins = {
-                            ruff = {
+                            ruff = { enabled = true },
+                            black = { enabled = false },
+                            autopep8 = { enabled = false },
+                            mccabe = { enabled = false },
+                            yapf = { enabled = false },
+                            pycodestyle = { enabled = false },
+                            pylint = { enabled = false },
+                            pyflakes = { enabled = false },
+                            pylsp_mypy = {
                                 enabled = true,
+                                live_mode = false,
+                                -- overrides = {
+                                --     "--python-executable",
+                                --     "/Users/yutaaoki/gg-newsletter-for-biz-packages/packages/core-api/.venv/bin/python",
+                                --     "--config-file",
+                                --     "/Users/yutaaoki/gg-newsletter-for-biz-packages/packages/core-api/mypy.ini",
+                                --     vim.fn.getcwd(),
+                                -- },
                             },
-                            pylsp_mypy = { enabled = true },
-                            pylsp_black = { enabled = true },
                         },
-                        disableOrganizeImports = true,
-                        disableTaggedHints = true,
+                        -- disableOrganizeImports = true,
+                        -- disableTaggedHints = true,
                     },
                     python = {
                         analysis = {
@@ -146,7 +173,7 @@ return {
                             useLibraryCodeForTypes = true,
                             -- we can this setting below to redefine some diagnostics
                             diagnosticSeverityOverrides = {
-                                deprecateTypingAliases = false,
+                                deprecateTypingAliases = true,
                             },
                             -- inlay hint settings are provided by pylance?
                             inlayHints = {

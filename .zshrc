@@ -171,9 +171,14 @@ alias cdb='cd ~/astro-blog'
 
 ## gg
 alias cdn='cd ~/gg-newsletter-for-biz-packages'
+alias cdnc='cd ~/gg-newsletter-for-biz-packages/packages/core-api'
 
 ## npc
 alias cdp='cd ~/npc-qa-bot'
+alias cdpn='cd ~/npc-qa-bot/iframe_next'
+
+## mu-copilot-dev
+alias cdc='cd ~/mu-copilot-dev'
 
 ## To parent group-directoris
 alias a='cd ../'
@@ -293,6 +298,15 @@ export PYTHONPATH="$HOME/LangUp/project"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# jvm
+export PATH=$(brew --prefix)/opt/openjdk@17/bin:$PATH
+export JAVA_HOME=$(brew --prefix)/opt/openjdk@17
+
+# neo4j
+export NEO4J_HOME=/usr/local/neo4j-community-5.26.0
+export PATH=$NEO4J_HOME/bin:$PATH
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

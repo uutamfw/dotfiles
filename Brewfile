@@ -59,6 +59,9 @@ brew "zllij"
 brew "pyenv"
 brew "go-task/tap/go-task"
 brew "rye"
+brew "neo4j"
+brew "openjdk@17"
+brew "maven"
 
 # Go
 brew "gopls"
