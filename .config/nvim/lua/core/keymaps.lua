@@ -67,7 +67,6 @@ keymap("n", "<Leader>eh", "<cmd>:Lspsaga diagnostic_jump_prev<CR>")
 
 --- Telescope
 keymap("n", "<Leader>p", "<cmd>Telescope find_files hidden=true theme=get_ivy<CR>")
--- keymap('n', '<Leader>;p', '<cmd>Telescope find_files theme=get_ivy<CR>')
 keymap(
     "n",
     "<Leader>ff",
@@ -115,13 +114,13 @@ keymap("n", "<Leader>M", "<cmd>:Mason<cr>")
 keymap("n", "<Leader>vu", "<cmd>:TSUpdate all<cr>")
 
 --- File explorer
-keymap("n", "<Leader>F", "<cmd>:NvimTreeFindFile<cr>")
+keymap("n", "<Leader>F", "<cmd>:NvimTreeToggle<cr>")
 
 --- Trouble
 keymap("n", "<Leader>n", "<cmd>:TroubleToggle<cr>")
 
---- Twilight
-keymap("n", "<Leader>z", "<cmd>:ZenMode<cr>")
+--- Lazy
+keymap("n", "<Leader>L", "<cmd>:Lazy<cr>")
 
 --- Substitution
 keymap("n", "<leader>jj", "<cmd>lua require('substitute').line()<cr>", { noremap = true })
