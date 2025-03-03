@@ -50,6 +50,46 @@ return {
                 view_history = "messages", -- view for :messages
                 view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
             },
+            cmdline = {
+                enabled = true,
+                view = "cmdline_popup",
+            },
+            popupmenu = {
+                enabled = true,
+                backend = "nui",
+            },
+            redirect = {
+                view = "popup",
+                filter = { event = "msg_show" },
+            },
+            commands = {},
+            notify = {
+                enabled = true,
+                view = "notify",
+            },
+            markdown = {
+                hover = {
+                    enabled = true,
+                    silent = false,
+                    view = nil,
+                    opts = {},
+                },
+            },
+            health = {
+                checker = true,
+            },
+            throttle = {
+                notifs = 10,
+                events = 10,
+            },
+            routes = {},
+            status = {},
+            format = {},
+            debug = false,
+            log = {
+                enabled = false,
+            },
+            log_max_size = 1024000,
         })
     end,
     dependencies = {

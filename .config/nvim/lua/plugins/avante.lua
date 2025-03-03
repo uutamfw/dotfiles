@@ -1,4 +1,6 @@
 return {
+    -- INFO: See the following link for more information on the configuration options
+    -- https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
@@ -6,7 +8,8 @@ return {
     opts = {
         -- add any opts here
         -- for example
-        provider = "openai",
+        provider = "claude",
+        cursor_applying_provider = "groq",
         openai = {
             endpoint = "https://api.openai.com/v1",
             model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
@@ -16,9 +19,35 @@ return {
         },
         claude = {
             endpoint = "https://api.anthropic.com",
-            model = "claude-3-5-sonnet-20241022",
+            model = "claude-3-7-sonnet-20250219",
             temperature = 0,
             max_tokens = 4096,
+        },
+        web_search_engine = {
+            provider = "tavily", -- tavily, serpapi, searchapi, google or kagi
+        },
+        rag_service = {
+            enabled = false, -- Enables the rag service, requires OPENAI_API_KEY to be set
+        },
+        behaviour = {
+            auto_suggestions = false, -- Experimental stage
+            auto_set_highlight_group = true,
+            auto_set_keymaps = true,
+            auto_apply_diff_after_generation = false,
+            support_paste_from_clipboard = false,
+            minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
+            enable_token_counting = true, -- Whether to enable token counting. Default to true.
+            enable_cursor_planning_mode = true, -- Whether to enable Cursor Planning Mode. Default to false.
+        },
+        vendors = {
+            --- ... existing vendors
+            groq = { -- define groq provider
+                __inherited_from = "openai",
+                api_key_name = "GROQ_API_KEY",
+                endpoint = "https://api.groq.com/openai/v1/",
+                model = "llama-3.3-70b-versatile",
+                max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+            },
         },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
@@ -28,7 +57,6 @@ return {
         "stevearc/dressing.nvim",
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
-        --- The below dependencies are optional,
         "echasnovski/mini.pick", -- for file_selector provider mini.pick
         "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
         "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
