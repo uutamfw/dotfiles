@@ -300,8 +300,8 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # jvm
-export PATH=$(brew --prefix)/opt/openjdk@17/bin:$PATH
-export JAVA_HOME=$(brew --prefix)/opt/openjdk@17
+# export PATH=$(brew --prefix)/opt/openjdk@17/bin:$PATH
+# export JAVA_HOME=$(brew --prefix)/opt/openjdk@17
 
 # neo4j
 export NEO4J_HOME=/usr/local/neo4j-community-5.26.0
@@ -343,3 +343,9 @@ export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
 
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
