@@ -126,6 +126,7 @@ cask "alacritty"
 cask "ghostty"
 cask "microsoft-teams"
 cask "kap"
+cask "zap"
 
 # WezTerm
 tap "wez/wezterm"
