@@ -26,7 +26,8 @@ end, {})
 api.nvim_create_autocmd({ "BufReadPost" }, {
     pattern = { "*" },
     callback = function()
-        vim.api.nvim_exec('silent! normal! g`"zv', false)
+        -- 非推奨の nvim_exec を nvim_exec2 に置き換え
+        vim.api.nvim_exec2('silent! normal! g`"zv', {})
     end,
 })
 
@@ -40,27 +41,27 @@ api.nvim_create_autocmd("WinLeave", {
     end,
 })
 
-local target_paths = {
-    vim.fn.expand("~/dotfiles/.config/nvim"),
-    vim.fn.expand("~/rohto-dev"),
-}
+-- local target_paths = {
+--     vim.fn.expand("~/dotfiles/.config/nvim"),
+--     vim.fn.expand("~/rohto-dev"),
+-- }
 
 -- Automatically run npx repomix when saving a file
-local current_dir = vim.fn.getcwd()
-for _, path in ipairs(target_paths) do
-    if current_dir:find(path, 1, true) then
-        api.nvim_create_autocmd("BufWritePost", {
-            pattern = "*",
-            callback = function()
-                local cmd = "npx repomix"
-                local output = vim.fn.system(cmd)
-                if vim.v.shell_error ~= 0 then
-                    vim.notify("Error running 'npx repomix': " .. output, vim.log.levels.ERROR)
-                else
-                    vim.notify("npx repomix executed successfully!", vim.log.levels.INFO)
-                end
-            end,
-        })
-        break
-    end
-end
+-- local current_dir = vim.fn.getcwd()
+-- for _, path in ipairs(target_paths) do
+--     if current_dir:find(path, 1, true) then
+--         api.nvim_create_autocmd("BufWritePost", {
+--             pattern = "*",
+--             callback = function()
+--                 local cmd = "npx repomix"
+--                 local output = vim.fn.system(cmd)
+--                 if vim.v.shell_error ~= 0 then
+--                     vim.notify("Error running 'npx repomix': " .. output, vim.log.levels.ERROR)
+--                 else
+--                     vim.notify("npx repomix executed successfully!", vim.log.levels.INFO)
+--                 end
+--             end,
+--         })
+--         break
+--     end
+-- end
