@@ -4,7 +4,7 @@ return {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
-    version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+    version = "*", -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
     opts = {
         -- add any opts here
         -- for example
@@ -20,6 +20,7 @@ return {
         claude = {
             endpoint = "https://api.anthropic.com",
             model = "claude-3-7-sonnet-20250219",
+            -- model = "claude-3-5-sonnet-20241022",
             temperature = 0,
             max_tokens = 32678,
         },
@@ -27,7 +28,12 @@ return {
             provider = "tavily", -- tavily, serpapi, searchapi, google or kagi
         },
         rag_service = {
-            enabled = false, -- Enables the rag service, requires OPENAI_API_KEY to be set
+            enabled = true, -- Enables the RAG service
+            host_mount = os.getenv("HOME"), -- Host mount path for the rag service
+            provider = "openai", -- The provider to use for RAG service (e.g. openai or ollama)
+            llm_model = "", -- The LLM model to use for RAG service
+            embed_model = "", -- The embedding model to use for RAG service
+            endpoint = "https://api.openai.com/v1", -- The API endpoint for RAG service
         },
         behaviour = {
             auto_suggestions = false, -- Experimental stage
