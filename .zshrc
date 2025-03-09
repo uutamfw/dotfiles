@@ -307,6 +307,9 @@ export NVM_DIR="$HOME/.nvm"
 export NEO4J_HOME=/usr/local/neo4j-community-5.26.0
 export PATH=$NEO4J_HOME/bin:$PATH
 
+# WezTerm
+export WEZTERM_CONFIG_FILE="$HOME/dotfiles/.config/WezTerm/wezterm.lua"
+export WEZTERM_CONFIG_DIR="$HOME/dotfiles/.config/WezTerm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
