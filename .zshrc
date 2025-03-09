@@ -56,7 +56,8 @@ export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 # WezTerm
-export WEZTERM_CONFIG_FILE="$HOME/dotfiles/.config/wezterm/wezterm.lua"
+export WEZTERM_CONFIG_FILE="$HOME/dotfiles/.config/WezTerm/wezterm.lua"
+export WEZTERM_CONFIG_DIR="$HOME/dotfiles/.config/WezTerm"
 
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
