@@ -114,7 +114,7 @@ keymap("n", "<Leader>M", "<cmd>:Mason<cr>")
 keymap("n", "<Leader>vu", "<cmd>:TSUpdate all<cr>")
 
 --- File explorer
-keymap("n", "<Leader>F", "<cmd>:NvimTreeToggle<cr>")
+keymap("n", "<Leader>F", "<cmd>:NvimTreeFindFile<cr>")
 
 --- Trouble
 keymap("n", "<Leader>n", "<cmd>:TroubleToggle<cr>")
