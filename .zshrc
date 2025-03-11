@@ -347,8 +347,8 @@ export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
 
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
