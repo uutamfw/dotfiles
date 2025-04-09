@@ -171,8 +171,7 @@ alias cdh='cd ~/.hammerspoon'
 alias cdb='cd ~/astro-blog'
 
 ## gg
-alias cdn='cd ~/gg-newsletter-for-biz-packages'
-alias cdnc='cd ~/gg-newsletter-for-biz-packages/packages/core-api'
+alias cdn='cd ~/gg-galirage-copilot'
 
 ## npc
 alias cdp='cd ~/npc-qa-bot'
@@ -199,12 +198,17 @@ alias nng='nvim ~/dotfiles/.config/ghostty/config'
 
 ### symlink the nvim folder
 ### if the symlink does not exist
-if [ ! -L ~/.config/nvim ]; then
-    ln -s ~/dotfiles/.config/nvim ~/.config/nvim
+if [ ! -L $HOME/.config/nvim ]; then
+    ln -s $HOME/dotfiles/.config/nvim $HOME/.config/nvim
 fi
 
-ln -s ~/dotfiles/.config/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
+if [ ! -L $HOME/Library/Application\ Support/com.mitchellh.ghostty/config ]; then
+    ln -s $HOME/dotfiles/.config/ghostty/config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
+fi
 
+if [ ! -L $HOME/Library/Application\ Support/bottom/bottom.toml ]; then
+    ln -s $XDG_CONFIG_HOME/bottom/bottom.toml $HOME/Library/Application\ Support/bottom/bottom.toml
+fi
 ## php
 alias php7.0='/Applications/MAMP/bin/php/php7.0.33/bin/php'
 
@@ -277,11 +281,13 @@ export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
 
 
 # python
-# export PATH="/opt/homebrew/Cellar/python@3.10/3.10.11/bin:$PATH"
-export PATH=/opt/homebrew/bin:$PATH
 # Changed path for rye
 export PATH="$HOME/.rye/shims:$PATH"
+
+export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/opt/python@3.8/libexec/bin:$PATH"
+# export PATH="/opt/homebrew/Cellar/python@3.10/3.10.11/bin:$PATH"
+#
 export PATH="/opt/homebrew/bin/conda:$PATH"
 
 eval "$(direnv hook zsh)"
