@@ -142,7 +142,7 @@ return {
                 settings = {
                     pylsp = {
                         plugins = {
-                            ruff = { enabled = true },
+                            -- ruff = { enabled = true },
                             black = { enabled = false },
                             autopep8 = { enabled = false },
                             mccabe = { enabled = false },
