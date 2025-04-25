@@ -5,7 +5,6 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
         -- your configuration comes here
-        auto_open = true,
         auto_close = true,
         auto_preview = true,
         -- 必須フィールドを追加
@@ -42,7 +41,9 @@ return {
             ["<esc>"] = "cancel",
             ["<cr>"] = "jump",
         },
-        modes = {},
+        modes = {
+            diagnostics = { auto_open = true },
+        },
         icons = {
             indent = {
                 top = "│ ",

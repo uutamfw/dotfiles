@@ -110,11 +110,11 @@ return {
                 on_new_config = function(new_config, workspace)
                     log.dlog("[DEBUG] workspace" .. tostring(workspace))
                     log.dlog("[DEBUG] get_python_path" .. tostring(get_python_path(workspace)))
-                    new_config.cmd = {
-                        "/Users/yutaaoki/gg-newsletter-for-biz-packages/packages/core-api/.venv/bin/python",
-                        "-m",
-                        "pylsp",
-                    }
+                    -- new_config.cmd = {
+                    --     "/Users/yutaaoki/gg-newsletter-for-biz-packages/packages/core-api/.venv/bin/python",
+                    --     "-m",
+                    --     "pylsp",
+                    -- }
                 end,
                 on_attach = function(client)
                     -- Disable formatting

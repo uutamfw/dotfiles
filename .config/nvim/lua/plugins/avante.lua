@@ -12,10 +12,10 @@ return {
         cursor_applying_provider = "groq",
         openai = {
             endpoint = "https://api.openai.com/v1",
-            model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+            model = "o3-mini", -- your desired model (or use gpt-4o, etc.)
             timeout = 30000, -- timeout in milliseconds
             temperature = 0, -- adjust if needed
-            max_tokens = 4096,
+            -- max_completion_tokens = 100000,
         },
         claude = {
             endpoint = "https://api.anthropic.com",
@@ -28,7 +28,7 @@ return {
             provider = "tavily", -- tavily, serpapi, searchapi, google or kagi
         },
         rag_service = {
-            enabled = true, -- Enables the RAG service
+            enabled = false, -- Enables the RAG service
             host_mount = os.getenv("HOME"), -- Host mount path for the rag service
             provider = "openai", -- The provider to use for RAG service (e.g. openai or ollama)
             llm_model = "", -- The LLM model to use for RAG service
@@ -52,7 +52,7 @@ return {
                 api_key_name = "GROQ_API_KEY",
                 endpoint = "https://api.groq.com/openai/v1/",
                 model = "llama-3.3-70b-versatile",
-                max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+                max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
             },
         },
     },

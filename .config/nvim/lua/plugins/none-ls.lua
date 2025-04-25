@@ -22,9 +22,9 @@ function M.config()
         null_ls.builtins.formatting.dart_format,
         null_ls.builtins.diagnostics.mypy.with({
             extra_args = function()
-                local virtual = "/Users/yutaaoki/gg-newsletter-for-biz-packages/packages/core-api/.venv/bin"
+                -- local virtual = "/Users/yutaaoki/gg-newsletter-for-biz-packages/packages/core-api/.venv/bin"
                 -- local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or "/usr"
-                return { "--python-executable", virtual .. "/bin/python" }
+                -- return { "--python-executable", virtual .. "/bin/python" }
             end,
         }),
         null_ls.builtins.formatting.gofmt,
