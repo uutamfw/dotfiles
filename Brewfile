@@ -61,6 +61,7 @@ brew "rye"
 brew "neo4j"
 brew "openjdk@17"
 brew "maven"
+brew "azure-cli"
 
 # Go
 brew "gopls"
@@ -126,6 +127,7 @@ cask "ghostty"
 cask "microsoft-teams"
 cask "kap"
 cask "zap"
+cask "wechat"
 
 # WezTerm
 tap "wez/wezterm"
