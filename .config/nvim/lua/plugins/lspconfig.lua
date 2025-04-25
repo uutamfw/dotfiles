@@ -5,6 +5,7 @@ local lsp_servers = {
     "pyright",
     "ruff_lsp",
 }
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 return {
     {
@@ -19,24 +20,41 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "neovim/nvim-lspconfig",
+            "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
             -- Mason-lspconfigの設定
             require("mason-lspconfig").setup({
                 automatic_installation = true,
                 ensure_installed = lsp_servers,
-                init_options = {
-                    preferences = {
-                        importModuleSpecifierEnding = "minimal",
-                        importModuleSpecifierPreference = "non-relative",
-                        includeCompletionsForImportStatements = true,
-                        includeCompletionsForModuleExports = true,
-                    },
-                },
             })
 
             -- 補完の設定
             vim.cmd([[set completeopt+=menuone,noselect,popup]])
+
+            -- 保存時に自動フォーマット（最適化版）
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+                callback = function(args)
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        buffer = args.buf,
+                        callback = function()
+                            -- フォーマット可能なLSPサーバーが存在するか確認
+                            local clients = vim.lsp.get_clients({ bufnr = args.buf })
+                            local formatting_client = nil
+                            for _, client in ipairs(clients) do
+                                if client.supports_method("textDocument/formatting") then
+                                    formatting_client = client
+                                    break
+                                end
+                            end
+                            if formatting_client then
+                                vim.lsp.buf.format {async = false, id = formatting_client.id}
+                            end
+                        end,
+                    })
+                end,
+            })
 
             -- LSPサーバーの設定
             vim.lsp.config("lua_ls", {
@@ -64,7 +82,9 @@ return {
                 settings = {
                     pyright = {
                         disableOrganizeImports = false,
+                        capabilities = capabilities,
                     },
+
                     python = {
                         analysis = {
                             ignore = { "*" }, -- Ruffにlintを任せる場合
