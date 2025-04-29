@@ -68,9 +68,9 @@ keymap("n", "<Leader>eh", "<cmd>:Lspsaga diagnostic_jump_prev<CR>")
 --- Telescope
 keymap("n", "<Leader>p", "<cmd>Telescope find_files hidden=true theme=get_ivy<CR>")
 keymap(
-    "n",
-    "<Leader>ff",
-    '<cmd>lua require("telescope").extensions.live_grep_args.' .. 'live_grep_args({ theme="ivy" })<CR>'
+  "n",
+  "<Leader>ff",
+  '<cmd>lua require("telescope").extensions.live_grep_args.' .. 'live_grep_args({ theme="ivy" })<CR>'
 )
 keymap("n", "<Leader>bf", "<cmd>Telescope buffers hidden=true theme=get_ivy<CR>")
 keymap("n", "<Leader>H", "<cmd>Telescope oldfiles hidden=true theme=get_ivy<CR>")
@@ -121,6 +121,14 @@ keymap("n", "<Leader>n", "<cmd>:TroubleToggle<cr>")
 
 --- Lazy
 keymap("n", "<Leader>L", "<cmd>:Lazy<cr>")
+
+-- dial.nvim
+keymap("n", "<C-a>", function()
+  require("dial.map").manipulate("increment", "normal")
+end)
+keymap("n", "<C-c>", function()
+  require("dial.map").manipulate("decrement", "normal")
+end)
 
 --- Substitution
 keymap("n", "<leader>jj", "<cmd>lua require('substitute').line()<cr>", { noremap = true })
