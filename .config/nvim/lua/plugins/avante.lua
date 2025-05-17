@@ -12,7 +12,7 @@ return {
     cursor_applying_provider = "groq",
     openai = {
       endpoint = "https://api.openai.com/v1",
-      model = "o3-mini", -- your desired model (or use gpt-4o, etc.)
+      model = "o4-mini", -- your desired model (or use gpt-4o, etc.)
       timeout = 30000,   -- timeout in milliseconds
       temperature = 0,   -- adjust if needed
       -- max_completion_tokens = 100000,
@@ -80,7 +80,7 @@ return {
           embed_image_as_base64 = false,
           prompt_for_file_name = false,
           drag_and_drop = {
-            insert_mode = false,
+            insert_mode = true,
           },
           -- required for Windows users
           use_absolute_path = false,
