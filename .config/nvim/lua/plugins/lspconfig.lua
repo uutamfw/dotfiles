@@ -3,7 +3,7 @@ local lsp_servers = {
   "lua_ls",
   "ts_ls",
   "pyright",
-  "ruff_lsp",
+  "ruff",
 }
 
 return {
@@ -31,7 +31,6 @@ return {
       -- 補完の設定
       vim.cmd([[set completeopt+=menuone,noselect,popup]])
 
-      -- 保存時に自動フォーマット（最適化版）
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("lsp", { clear = true }),
         callback = function(args)
@@ -40,15 +39,11 @@ return {
             callback = function()
               -- フォーマット可能なLSPサーバーが存在するか確認
               local clients = vim.lsp.get_clients({ bufnr = args.buf })
-              local formatting_client = nil
               for _, client in ipairs(clients) do
                 if client.supports_method("textDocument/formatting") then
-                  formatting_client = client
+                  vim.lsp.buf.format { async = false, id = client.id }
                   break
                 end
-              end
-              if formatting_client then
-                vim.lsp.buf.format { async = false, id = formatting_client.id }
               end
             end,
           })
@@ -56,33 +51,14 @@ return {
       })
 
       -- LSPサーバーの設定
-      vim.lsp.config("lua_ls", {
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" }, -- グローバル変数の警告を無視
-            },
-            -- 細かい挙動は下記で設定している
-            -- @see: https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig
-            format = {
-              enable = true,
-            },
-          },
-        },
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(ev)
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+          if client:supports_method('textDocument/completion') then
+            vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+          end
+        end,
       })
-
-      vim.lsp.config("ruff_lsp", {
-        -- pyproject.tomlの設定が自動的に読み込まれる
-      })
-
-      vim.lsp.config("pyright", {
-        settings = {
-          pyright = {
-            disableOrganizeImports = true,
-          },
-        },
-      })
-
       -- LSPサーバーの有効化
       vim.lsp.enable(lsp_servers)
     end,
