@@ -284,11 +284,15 @@ export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
 # Changed path for rye
 export PATH="$HOME/.rye/shims:$PATH"
 
+# pyenv
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/opt/python@3.8/libexec/bin:$PATH"
 # export PATH="/opt/homebrew/Cellar/python@3.10/3.10.11/bin:$PATH"
 #
-export PATH="/opt/homebrew/bin/conda:$PATH"
+# export PATH="/opt/homebrew/bin/conda:$PATH"
 
 eval "$(direnv hook zsh)"
 
