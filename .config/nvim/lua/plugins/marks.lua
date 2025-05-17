@@ -3,6 +3,6 @@
 -- https://github.com/chentoast/marks.nvim#mappings
 -- Plugin for marks
 return {
-    "chentoast/marks.nvim",
-    config = function() require("marks").setup({}) end
+  "chentoast/marks.nvim",
+  config = function() require("marks").setup({}) end
 }
