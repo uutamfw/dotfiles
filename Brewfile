@@ -128,6 +128,7 @@ cask "microsoft-teams"
 cask "kap"
 cask "zap"
 cask "wechat"
+cask "obsidian"
 
 # WezTerm
 tap "wez/wezterm"
