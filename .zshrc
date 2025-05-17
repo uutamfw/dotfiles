@@ -172,6 +172,7 @@ alias cdb='cd ~/astro-blog'
 
 ## gg
 alias cdn='cd ~/gg-galirage-copilot'
+alias cdna='cd ~/gg-galirage-copilot/app'
 
 ## npc
 alias cdp='cd ~/npc-qa-bot'
