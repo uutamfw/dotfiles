@@ -147,7 +147,7 @@ alias cdaa='cd ~/autoscale-probot'
 ## Trander
 alias cdt='cd ~/trander'
 alias cdf='cd ~/trander_flutter'
-alias cdr='cd ~/trander-rust'
+alias cdr='cd ~/trander-ai'
 
 ## WezTerm
 alias cdw='cd ~/.config/WezTerm'
@@ -364,3 +364,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Added by Windsurf
+export PATH="/Users/yutaaoki/.codeium/windsurf/bin:$PATH"
