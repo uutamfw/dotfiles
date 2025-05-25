@@ -129,6 +129,8 @@ cask "kap"
 cask "zap"
 cask "wechat"
 cask "obsidian"
+cask "windsurf"
+cask "gyazo"
 
 # WezTerm
 tap "wez/wezterm"
