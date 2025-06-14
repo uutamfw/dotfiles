@@ -62,6 +62,7 @@ brew "neo4j"
 brew "openjdk@17"
 brew "maven"
 brew "azure-cli"
+brew "poppler"
 
 # Go
 brew "gopls"
@@ -131,6 +132,7 @@ cask "wechat"
 cask "obsidian"
 cask "windsurf"
 cask "gyazo"
+cask "notion"
 
 # WezTerm
 tap "wez/wezterm"
