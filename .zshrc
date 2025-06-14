@@ -59,9 +59,6 @@ export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 export WEZTERM_CONFIG_FILE="$HOME/dotfiles/.config/WezTerm/wezterm.lua"
 export WEZTERM_CONFIG_DIR="$HOME/dotfiles/.config/WezTerm"
 
-# pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
 
 ### Added by Zinit's installer
 if [[ ! -f /opt/homebrew/Cellar/zinit/3.7/zinit.zsh ]]; then
@@ -73,7 +70,6 @@ if [[ ! -f /opt/homebrew/Cellar/zinit/3.7/zinit.zsh ]]; then
 fi
 
 source "/opt/homebrew/Cellar/zinit/3.7/zinit.zsh"
-# source "/opt/homebrew/Cellar/zsh-autosuggestions/0.7.0/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -82,7 +78,6 @@ autoload -Uz _zinit
 ### Color configuration
 export CLICOLOR=1
 export TERM=xterm-256color
-# source "/opt/homebrew/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 #################################
 ## prompt
@@ -141,13 +136,11 @@ alias cdnn='cd ~/dotfiles/.config/nvim'
 ## SocialDog
 alias cdss='cd ~/socialdog'
 alias cds='cd ~/socialdog/web'
-alias cdsg='cd ~/socialdog/web/application_go'
-alias cdaa='cd ~/autoscale-probot'
 
 ## Trander
 alias cdt='cd ~/trander'
 alias cdf='cd ~/trander_flutter'
-alias cdr='cd ~/trander-ai'
+alias cdr='cd ~/trander-claude'
 
 ## WezTerm
 alias cdw='cd ~/.config/WezTerm'
@@ -173,6 +166,10 @@ alias cdb='cd ~/astro-blog'
 ## gg
 alias cdn='cd ~/gg-galirage-copilot'
 alias cdna='cd ~/gg-galirage-copilot/app'
+alias cdn2='cd ~/gg-galirage-copilot-2'
+alias cdna2='cd ~/gg-galirage-copilot-2/app'
+alias cdn3='cd ~/gg-galirage-copilot-3'
+alias cdna3='cd ~/gg-galirage-copilot-3/app'
 
 ## npc
 alias cdp='cd ~/npc-qa-bot'
@@ -280,6 +277,9 @@ export PATH="/usr/local/opt/node@14/bin:$PATH"
 export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
 ### End of Zinit's installer chunk
 
+# pyenv
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv init --path)"
 
 # python
 # Changed path for rye
@@ -290,7 +290,7 @@ export PATH="$HOME/.rye/shims:$PATH"
 # export PATH="$PYENV_ROOT/bin:$PATH"
 
 export PATH=/opt/homebrew/bin:$PATH
-export PATH="/opt/homebrew/opt/python@3.8/libexec/bin:$PATH"
+# export PATH="/opt/homebrew/opt/python@3.8/libexec/bin:$PATH"
 # export PATH="/opt/homebrew/Cellar/python@3.10/3.10.11/bin:$PATH"
 #
 # export PATH="/opt/homebrew/bin/conda:$PATH"
@@ -323,19 +323,20 @@ export PATH=$NEO4J_HOME/bin:$PATH
 export WEZTERM_CONFIG_FILE="$HOME/dotfiles/.config/WezTerm/wezterm.lua"
 export WEZTERM_CONFIG_DIR="$HOME/dotfiles/.config/WezTerm"
 
+# INFO: Commented out conda initialization block due to potential conflicts with another Python environment manager (like pyenv or rye).
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+#         . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
 
 
