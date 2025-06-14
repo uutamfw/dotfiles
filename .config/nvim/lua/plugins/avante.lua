@@ -6,22 +6,35 @@ return {
   lazy = false,
   version = "*", -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
-    -- add any opts here
-    -- for example
     provider = "claude",
     cursor_applying_provider = "groq",
-    openai = {
-      endpoint = "https://api.openai.com/v1",
-      model = "o4-mini", -- your desired model (or use gpt-4o, etc.)
-      timeout = 30000,   -- timeout in milliseconds
-      temperature = 0,   -- adjust if needed
-      -- max_completion_tokens = 100000,
-    },
-    claude = {
-      endpoint = "https://api.anthropic.com",
-      model = "claude-sonnet-4-20250514",
-      temperature = 0,
-      max_tokens = 32678,
+    providers = {
+      openai = {
+        endpoint = "https://api.openai.com/v1",
+        model = "o4-mini", -- your desired model (or use gpt-4o, etc.)
+        timeout = 30000,   -- timeout in milliseconds
+        extra_request_body = {
+          temperature = 0, -- adjust if needed
+          -- max_completion_tokens = 100000,
+        },
+      },
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-sonnet-4-20250514",
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 32678,
+        },
+      },
+      groq = { -- define groq provider
+        __inherited_from = "openai",
+        api_key_name = "GROQ_API_KEY",
+        endpoint = "https://api.groq.com/openai/v1/",
+        model = "llama-3.3-70b-versatile",
+        extra_request_body = {
+          max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+        },
+      },
     },
     web_search_engine = {
       provider = "tavily", -- tavily, serpapi, searchapi, google or kagi
@@ -43,16 +56,6 @@ return {
       minimize_diff = true,               -- Whether to remove unchanged lines when applying a code block
       enable_token_counting = true,       -- Whether to enable token counting. Default to true.
       enable_cursor_planning_mode = true, -- Whether to enable Cursor Planning Mode. Default to false.
-    },
-    vendors = {
-      --- ... existing vendors
-      groq = { -- define groq provider
-        __inherited_from = "openai",
-        api_key_name = "GROQ_API_KEY",
-        endpoint = "https://api.groq.com/openai/v1/",
-        model = "llama-3.3-70b-versatile",
-        max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
-      },
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
