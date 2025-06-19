@@ -4,6 +4,7 @@ local lsp_servers = {
   "ts_ls",
   "pyright",
   "ruff",
+  "jsonls"
 }
 
 return {
