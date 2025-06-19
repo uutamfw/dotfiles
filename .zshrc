@@ -115,6 +115,9 @@ alias gl='git log'
 alias grb='git rebase'
 alias gb='git branch'
 
+# claude code
+alias c='claude'
+
 ## shell
 dirtouch() {
     mkdir -p "$(dirname $1)"
