@@ -15,4 +15,8 @@ brew bundle --file ./Brewfile
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.config ~/.config
 
+# Setup GitHub CLI authentication
+echo "Setting up GitHub CLI..."
+gh auth login
+
 # shell script files
