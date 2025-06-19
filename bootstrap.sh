@@ -19,4 +19,10 @@ ln -sf ~/dotfiles/.config ~/.config
 echo "Setting up GitHub CLI..."
 gh auth login
 
+# Create OpenAI key file for LLM usage if it doesn't exist
+if [ ! -f ~/.openai_key.zsh ]; then
+    cp ~/dotfiles/.openai_key.zsh.template ~/.openai_key.zsh
+    echo "Created ~/.openai_key.zsh from template - add your API keys to this file"
+fi
+
 # shell script files
