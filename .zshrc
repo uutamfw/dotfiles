@@ -174,6 +174,10 @@ alias cdna2='cd ~/gg-galirage-copilot-2/app'
 alias cdn3='cd ~/gg-galirage-copilot-3'
 alias cdna3='cd ~/gg-galirage-copilot-3/app'
 
+# zen-mcp-server
+alias cdz='cd ~/zen-mcp-server'
+# ./run-server.sh -f
+
 ## npc
 alias cdp='cd ~/npc-qa-bot'
 alias cdpn='cd ~/npc-qa-bot/iframe_next'
