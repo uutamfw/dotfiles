@@ -31,7 +31,7 @@ znap source mafredri/zsh-async
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 ################################
 ### PATH
@@ -61,7 +61,7 @@ export WEZTERM_CONFIG_DIR="$HOME/dotfiles/.config/WezTerm"
 
 
 ### Added by Zinit's installer
-if [[ ! -f /opt/homebrew/Cellar/zinit/3.7/zinit.zsh ]]; then
+if [[ ! -f /opt/homebrew/Cellar/zinit/3.14.0/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
     command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
@@ -69,7 +69,7 @@ if [[ ! -f /opt/homebrew/Cellar/zinit/3.7/zinit.zsh ]]; then
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-source "/opt/homebrew/Cellar/zinit/3.7/zinit.zsh"
+source "/opt/homebrew/Cellar/zinit/3.14.0/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
