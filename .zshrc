@@ -6,12 +6,11 @@
 [[ -r ~/.znap/znap.zsh ]] ||
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/.znap
-
 # Make sure the repos directory exists
 # -p: creates the parent directory if it doesn't exist(/aaa/bbb/ccc -> aaa, bbb, ccc ex)
 mkdir -p ~/.znap/repos
-
 source ~/.znap/znap.zsh
+
 zstyle ':znap:*' repos-dir ~/.znap/repos
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
@@ -117,6 +116,7 @@ alias gb='git branch'
 
 # claude code
 alias c='claude'
+alias c-d='claude --dangerously-skip-permissions'
 
 ## shell
 dirtouch() {
@@ -146,7 +146,7 @@ alias cdf='cd ~/trander_flutter'
 alias cdr='cd ~/trander-claude'
 
 ## WezTerm
-alias cdw='cd ~/.config/WezTerm'
+alias cdw='cd ~/dotfiles/.config/WezTerm'
 
 ## dotfiles
 alias cdd='cd ~/dotfiles'
@@ -177,6 +177,9 @@ alias cdna3='cd ~/gg-galirage-copilot-3/app'
 # zen-mcp-server
 alias cdz='cd ~/zen-mcp-server'
 # ./run-server.sh -f
+
+# Obsidian
+alias cdu='cd ~/uuta'
 
 ## npc
 alias cdp='cd ~/npc-qa-bot'
@@ -276,9 +279,18 @@ export NVIM_LOG_LEVEL="DEBUG"
 # Buildツールを使うかどうか
 # export DOCKER_BUILDKIT=1
 
+# yarn
+export PATH="$(yarn global bin):$PATH"
+
 # GitHub CLI
 eval "$(gh completion -s zsh)"
 export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+# symbolic link for Claude MCP servers
+if [ -f "$HOME/dotfiles/.claude/settings.json" ]; then
+    mkdir -p "$HOME/.claude"
+    cp "$HOME/dotfiles/.claude/settings.json" "$HOME/.claude/settings.json"
+fi
 
 # Git diff highlight
 export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
@@ -375,3 +387,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Added by Windsurf
 export PATH="/Users/yutaaoki/.codeium/windsurf/bin:$PATH"
+
+# alias claude="/Users/yutaaoki/.claude/local/claude"
