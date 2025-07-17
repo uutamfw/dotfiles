@@ -116,6 +116,7 @@ cask "obsidian"
 cask "windsurf"
 cask "gyazo"
 cask "notion"
+cask "chromium"
 
 # WezTerm
 tap "wez/wezterm"
