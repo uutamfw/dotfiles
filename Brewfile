@@ -60,6 +60,8 @@ brew "openjdk@17"
 brew "maven"
 brew "azure-cli"
 brew "poppler"
+brew "gcc"
+brew "uv"
 
 # Go
 brew "gopls"
