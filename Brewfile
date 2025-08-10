@@ -62,6 +62,8 @@ brew "azure-cli"
 brew "poppler"
 brew "gcc"
 brew "uv"
+brew "chafa"
+brew "oven-sh/bun/bun"
 
 # Go
 brew "gopls"
