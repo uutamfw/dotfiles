@@ -118,6 +118,9 @@ alias gb='git branch'
 alias c='claude'
 alias c-d='claude --dangerously-skip-permissions'
 
+# cursor-agent
+alias c-a='cursor-agent'
+
 ## shell
 dirtouch() {
     mkdir -p "$(dirname $1)"
@@ -143,7 +146,7 @@ alias cds='cd ~/socialdog/web'
 ## Trander
 alias cdt='cd ~/trander'
 alias cdf='cd ~/trander_flutter'
-alias cdr='cd ~/trander-claude'
+alias cdr='cd ~/trander-rust'
 
 ## WezTerm
 alias cdw='cd ~/dotfiles/.config/WezTerm'
@@ -185,8 +188,8 @@ alias cdu='cd ~/uuta'
 alias cdp='cd ~/npc-qa-bot'
 alias cdpn='cd ~/npc-qa-bot/iframe_next'
 
-## mu-copilot-dev
-alias cdc='cd ~/mu-copilot-dev'
+## .claude
+alias cdc='cd ~/.claude'
 
 ## To parent group-directoris
 alias a='cd ../'
@@ -203,6 +206,7 @@ alias nnz='nvim ~/dotfiles/.zshrc'
 alias nni='nvim ~/dotfiles/.config/nvim/init.lua'
 alias nnb='nvim ~/dotfiles/Brewfile'
 alias nng='nvim ~/dotfiles/.config/ghostty/config'
+alias nnh='nvim ~/.hammerspoon/init.lua'
 
 ### symlink the nvim folder
 ### if the symlink does not exist
@@ -389,3 +393,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="/Users/yutaaoki/.codeium/windsurf/bin:$PATH"
 
 # alias claude="/Users/yutaaoki/.claude/local/claude"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
