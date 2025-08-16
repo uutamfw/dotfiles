@@ -32,17 +32,18 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local edge_background = "#0a0a0f"
 	local background = tab.is_active and "#1e2030" or "#141420"
 	local foreground = tab.is_active and "#c8d3f5" or "#545c7e"
-	local accent = tab.is_active and "#7aa2f7" or "#3b4261"
 
 	local left_sep = wezterm.nerdfonts.ple_lower_right_triangle
 	local right_sep = wezterm.nerdfonts.ple_upper_left_triangle
+
+	local icon_color = tab.is_active and "#d6337d" or "#565f89"
 
 	return {
 		{ Background = { Color = edge_background } },
 		{ Foreground = { Color = background } },
 		{ Text = left_sep },
 		{ Background = { Color = background } },
-		{ Foreground = { Color = accent } },
+		{ Foreground = { Color = icon_color } },
 		{ Text = " " .. icon .. " " },
 		{ Foreground = { Color = foreground } },
 		{ Attribute = { Intensity = tab.is_active and "Bold" or "Normal" } },
