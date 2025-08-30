@@ -50,6 +50,16 @@ local keys = {
 		key = "l",
 		mods = "OPT",
 		action = wezterm.action.ActivateTabRelativeNoWrap(1)
+	},
+	{
+		key = "j",
+		mods = "OPT",
+		action = wezterm.action.MoveTabRelative(-1)
+	},
+	{
+		key = "k",
+		mods = "OPT",
+		action = wezterm.action.MoveTabRelative(1)
 	}
 }
 
