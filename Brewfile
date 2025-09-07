@@ -64,6 +64,7 @@ brew "gcc"
 brew "uv"
 brew "chafa"
 brew "oven-sh/bun/bun"
+brwe "codex"
 
 # Go
 brew "gopls"
