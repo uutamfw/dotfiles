@@ -149,8 +149,9 @@ keymap("n", "ch", "<cmd>GitConflictPrevConflict<CR>")
 keymap("n", "cm", "<cmd>GitConflictListQf<CR>")
 
 --- Git
-keymap("n", "<Leader>gf", "<cmd>GitBlameOpenFileURL<CR>")
-keymap("n", "<Leader>gc", "<cmd>GitBlameOpenCommitURL<CR>")
+keymap("n", "gf", "<cmd>GitBlameOpenFileURL<CR>")
+keymap("v", "gf", ":'<,'>GitBlameOpenFileURL<CR>", { silent = true })
+keymap({ "n", "v" }, "gc", "<cmd>GitBlameOpenCommitURL<CR>")
 keymap("n", "gh", "<cmd>Gitsigns prev_hunk<CR>")
 keymap("n", "gl", "<cmd>Gitsigns next_hunk<CR>")
 keymap("n", "gd", "<cmd>Gitsigns diffthis<CR>")
