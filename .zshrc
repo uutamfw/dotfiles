@@ -45,6 +45,7 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/krb5/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PATH="/Users/yutaaoki/.cache/.bun/bin:$PATH"
 
 # Flutter
 export PATH="$PATH:`pwd`/flutter/bin"
@@ -170,12 +171,12 @@ alias cdh='cd ~/.hammerspoon'
 alias cdb='cd ~/astro-blog'
 
 ## gg
-alias cdn='cd ~/gg-galirage-copilot'
-alias cdna='cd ~/gg-galirage-copilot/app'
-alias cdn2='cd ~/gg-galirage-copilot-2'
-alias cdna2='cd ~/gg-galirage-copilot-2/app'
-alias cdn3='cd ~/gg-galirage-copilot-3'
-alias cdna3='cd ~/gg-galirage-copilot-3/app'
+alias cdn='cd ~/gg-ai-agent-family'
+alias cdna='cd ~/gg-ai-agent-family/app'
+alias cdn2='cd ~/gg-ai-agent-family-2'
+alias cdna2='cd ~/gg-ai-agent-family-2/app'
+alias cdn3='cd ~/gg-ai-agent-family-3'
+alias cdna3='cd ~/gg-ai-agent-family-3/app'
 
 # zen-mcp-server
 alias cdz='cd ~/zen-mcp-server'
