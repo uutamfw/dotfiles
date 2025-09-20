@@ -122,6 +122,7 @@ cask "windsurf"
 cask "gyazo"
 cask "notion"
 cask "chromium"
+cask "freetube"
 
 # WezTerm
 tap "wez/wezterm"
@@ -129,6 +130,10 @@ cask "wez/wezterm/wezterm"
 
 tap "homebrew/cask-fonts"
 cask "font-hack-nerd-font"
+
+# Bun
+tap "oven-sh/bun"
+brew "bun"
 
 mas 'Dashlane', id: 517914548
 mas 'Line', id: 539883307
