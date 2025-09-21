@@ -209,6 +209,9 @@ alias nnb='nvim ~/dotfiles/Brewfile'
 alias nng='nvim ~/dotfiles/.config/ghostty/config'
 alias nnh='nvim ~/.hammerspoon/init.lua'
 
+## silicon
+alias sl='silicon --from-clipboard -l rs --to-clipboard'
+
 ### symlink the nvim folder
 ### if the symlink does not exist
 if [ ! -L $HOME/.config/nvim ]; then
