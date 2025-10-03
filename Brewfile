@@ -60,7 +60,7 @@ brew "poppler"
 brew "gcc"
 brew "uv"
 brew "chafa"
-brew "oven-sh/bun/bun"
+brew "oven-sh/bun"
 brew "codex"
 brew "just"
 
