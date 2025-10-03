@@ -64,7 +64,8 @@ brew "gcc"
 brew "uv"
 brew "chafa"
 brew "oven-sh/bun/bun"
-brwe "codex"
+brew "codex"
+brew "just"
 
 # Go
 brew "gopls"
@@ -123,6 +124,7 @@ cask "gyazo"
 cask "notion"
 cask "chromium"
 cask "freetube"
+cask "claude-code"
 
 # WezTerm
 tap "wez/wezterm"
@@ -134,6 +136,10 @@ cask "font-hack-nerd-font"
 # Bun
 tap "oven-sh/bun"
 brew "bun"
+
+# Poe
+tap "nat-n/poethepoet"
+brew "nat-n/poethepoet/poethepoet"
 
 mas 'Dashlane', id: 517914548
 mas 'Line', id: 539883307
