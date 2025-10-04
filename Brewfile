@@ -122,6 +122,7 @@ cask "claude-code"
 cask "font-hackgen-nerd"
 cask "font-noto-sans"
 cask "font-noto-nerd-font"
+cask "brave-browser"
 
 # WezTerm
 tap "wez/wezterm"
