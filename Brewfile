@@ -122,6 +122,7 @@ cask "chromium"
 cask "freetube"
 cask "claude-code"
 cask "font-hackgen-nerd"
+cask "font-noto-sans"
 
 # WezTerm
 tap "wez/wezterm"
