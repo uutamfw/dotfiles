@@ -86,12 +86,12 @@ PROMPT='%F{red}%d%f$ '
 #################################
 ## alias
 
-# exa (highrighter)
-if [[ $(command -v exa) ]]; then
-  alias ls='exa --icons --git'
-  alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
-  alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
-  alias ll='exa -l -aa -h -@ -m --icons --git --time-style=long-iso --color=automatic --group-directories-first'
+# eza (highrighter)
+if [[ $(command -v eza) ]]; then
+  alias ls='eza --icons --git'
+  alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+  alias ltl='eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
+  alias ll='eza -l -aa -h -@ -m --icons --git --time-style=long-iso --color=automatic --group-directories-first'
 fi
 
 ## git
@@ -121,6 +121,9 @@ alias c-d='claude --dangerously-skip-permissions'
 
 # cursor-agent
 alias c-a='cursor-agent'
+
+# codex
+alias co='codex'
 
 ## shell
 dirtouch() {
@@ -218,15 +221,9 @@ if [ ! -L $HOME/.config/nvim ]; then
     ln -s $HOME/dotfiles/.config/nvim $HOME/.config/nvim
 fi
 
-if [ ! -L $HOME/Library/Application\ Support/com.mitchellh.ghostty/config ]; then
-    ln -s $HOME/dotfiles/.config/ghostty/config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
-fi
-
 if [ ! -L $HOME/Library/Application\ Support/bottom/bottom.toml ]; then
     ln -s $XDG_CONFIG_HOME/bottom/bottom.toml $HOME/Library/Application\ Support/bottom/bottom.toml
 fi
-## php
-alias php7.0='/Applications/MAMP/bin/php/php7.0.33/bin/php'
 
 ## peco
 # search command

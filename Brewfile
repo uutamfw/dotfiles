@@ -62,6 +62,7 @@ brew "uv"
 brew "chafa"
 brew "codex"
 brew "just"
+brew "eza"
 
 # Go
 brew "gopls"
