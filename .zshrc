@@ -218,14 +218,13 @@ alias nnh='nvim ~/.hammerspoon/init.lua'
 ## silicon
 alias sl='silicon --from-clipboard -l rs --to-clipboard'
 
-### symlink the nvim folder
-### if the symlink does not exist
-if [ ! -L $HOME/.config/nvim ]; then
-    ln -s $HOME/dotfiles/.config/nvim $HOME/.config/nvim
+### symlink the nvim folder when it doesn't exist yet
+if [ ! -e "$HOME/.config/nvim" ]; then
+    ln -s "$HOME/dotfiles/.config/nvim" "$HOME/.config/nvim"
 fi
 
-if [ ! -L $HOME/Library/Application\ Support/bottom/bottom.toml ]; then
-    ln -s $XDG_CONFIG_HOME/bottom/bottom.toml $HOME/Library/Application\ Support/bottom/bottom.toml
+if [ ! -e "$HOME/Library/Application Support/bottom/bottom.toml" ]; then
+    ln -s "$XDG_CONFIG_HOME/bottom/bottom.toml" "$HOME/Library/Application Support/bottom/bottom.toml"
 fi
 
 ## peco
