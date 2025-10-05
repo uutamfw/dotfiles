@@ -126,7 +126,7 @@ alias c-a='cursor-agent'
 alias co='codex'
 
 # aicommits (settings)
-alias aicd='aicommits config set generate=3 max-length=40 locale=en'
+alias aicd='aicommits config set generate=3 max-length=40 locale=en model=gpt-5-nano'
 
 ## shell
 dirtouch() {
