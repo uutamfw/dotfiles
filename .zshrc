@@ -125,6 +125,9 @@ alias c-a='cursor-agent'
 # codex
 alias co='codex'
 
+# aicommits (settings)
+alias aicd='aicommits config set generate=3 max-length=40 locale=en'
+
 ## shell
 dirtouch() {
     mkdir -p "$(dirname $1)"
