@@ -5,3 +5,11 @@
 ```shell
 $ ./bootstrap.sh
 ```
+
+## Sync prompts
+
+- Run `./prompts.sh` anytime to copy files from `prompts/` into `~/.codex/prompts` and `~/.claude/commands`.
+
+```shell
+$ ./prompts.sh
+```
