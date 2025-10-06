@@ -1,0 +1,1 @@
+~/uutaにobsidianのvaultが格納されているので、中のmarkdownファイルを読み込んでください。
