@@ -15,9 +15,13 @@ brew bundle --file ./Brewfile
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.config ~/.config
 
-# Setup GitHub CLI authentication
-echo "Setting up GitHub CLI..."
-gh auth login
+# Setup GitHub CLI authentication only if needed
+if ! gh auth status > /dev/null 2>&1; then
+	echo "Setting up GitHub CLI..."
+	gh auth login
+else
+	echo "GitHub CLI already authenticated; skipping login."
+fi
 
 # Create OpenAI key file for LLM usage if it doesn't exist
 if [ ! -f ~/.openai_key.zsh ]; then
@@ -25,4 +29,6 @@ if [ ! -f ~/.openai_key.zsh ]; then
     echo "Created ~/.openai_key.zsh from template - add your API keys to this file"
 fi
 
-# shell script files
+./prompts.sh
+
+./gh/gh-bundle.sh
