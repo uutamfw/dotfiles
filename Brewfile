@@ -64,6 +64,7 @@ brew "codex"
 brew "just"
 brew "eza"
 brew "aicommits"
+brew "yq"
 
 # Go
 brew "gopls"
