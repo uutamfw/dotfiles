@@ -309,6 +309,7 @@ export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
 
 # python
 # Changed path for rye
+export PATH="$HOME/.local/share/uv/bin:$PATH"
 export PATH="$HOME/.rye/shims:$PATH"
 
 # pyenv
