@@ -6,9 +6,8 @@ window-theme = ghostty
 background-opacity = 0.8
 background-blur-radius = 20
 macos-titlebar-style = transparent
-font-size = 14
-font-family = NotoSansM Nerd Font Mono
-font-bold = true
+font-size = 16
+font-family = Go-Mono Nerd Font Mono
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+l=goto_split:right
 keybind = ctrl+shift+j=goto_split:bottom
