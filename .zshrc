@@ -198,6 +198,9 @@ alias cdpn='cd ~/npc-qa-bot/iframe_next'
 ## .claude
 alias cdc='cd ~/.claude'
 
+## key-leap
+alias cdk='cd ~/key-leap'
+
 ## To parent group-directoris
 alias a='cd ../'
 alias aa='cd ../../'
