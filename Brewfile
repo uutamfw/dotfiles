@@ -125,6 +125,8 @@ cask "font-noto-sans"
 cask "font-noto-nerd-font"
 cask "cyberghost-vpn"
 cask "google-drive"
+cask "font-0xproto-nerd-font"
+cask "font-go-mono-nerd-font"
 
 # WezTerm
 tap "wez/wezterm"
