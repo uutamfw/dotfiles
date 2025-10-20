@@ -94,6 +94,27 @@ if [[ $(command -v eza) ]]; then
   alias ll='eza -l -aa -h -@ -m --icons --git --time-style=long-iso --color=automatic --group-directories-first'
 fi
 
+# git diff function
+g_diff() {
+  if [[ $# -eq 0 ]]; then
+    command git diff
+    return
+  fi
+
+  if [[ $1 == <-> ]]; then
+    local steps=$1
+    shift
+    case $steps in
+      0) command git diff HEAD "$@" ;;
+      1) command git diff HEAD^ HEAD "$@" ;;
+      *) command git diff HEAD~"$steps" HEAD "$@" ;;
+    esac
+    return
+  fi
+
+  command git diff "$@"
+}
+
 ## git
 alias gs='git status'
 alias gaa='git add .'
@@ -109,7 +130,7 @@ alias gmp='git merge origin/feature-beagle-post-performance'
 alias gcp='git checkout feature-beagle-post-performance'
 alias gr-s='git reset --soft HEAD^'
 alias gr-h='git reset --hard HEAD^'
-alias gd='git diff'
+alias gd=g_diff
 alias gf='git fetch'
 alias gl='git log'
 alias grb='git rebase'
