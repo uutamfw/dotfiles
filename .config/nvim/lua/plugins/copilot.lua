@@ -1,5 +1,12 @@
 return {
   "zbirenbaum/copilot.lua",
+  equires = {
+    "copilotlsp-nvim/copilot-lsp",
+    init = function()
+      vim.g.copilot_nes_debounce = 500
+    end,
+  },
+  cmd = "Copilot",
   lazy = true,           -- 遅延読み込みを有効化
   event = "InsertEnter", -- Insertモードに入ったときに読み込む
   config = function()
