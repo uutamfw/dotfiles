@@ -64,6 +64,8 @@ brew "just"
 brew "eza"
 brew "aicommits"
 brew "yq"
+brew "pre-commit"
+brew "glow"
 
 # Go
 brew "gopls"
