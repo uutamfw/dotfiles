@@ -182,8 +182,9 @@ alias cdw='cd ~/dotfiles/.config/WezTerm'
 ## dotfiles
 alias cdd='cd ~/dotfiles'
 
-## gas
-alias cdg='cd ~/gas-workout-logs'
+## mu
+alias cdv='cd ~/mu-muc-vscode'
+alias cdg='cd ~/mu-muc-app-service'
 
 ## Surfingkeys-conf
 alias cdm='cd ~/surfingkeys-conf'
@@ -362,9 +363,11 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# jvm
+# openjdk
 # export PATH=$(brew --prefix)/opt/openjdk@17/bin:$PATH
 # export JAVA_HOME=$(brew --prefix)/opt/openjdk@17
+export PATH=$(brew --prefix)/opt/openjdk/bin:$PATH
+export JAVA_HOME=$(brew --prefix)/opt/openjdk
 
 # neo4j
 export NEO4J_HOME=/usr/local/neo4j-community-5.26.0
