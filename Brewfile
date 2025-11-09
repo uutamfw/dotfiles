@@ -66,6 +66,8 @@ brew "aicommits"
 brew "yq"
 brew "pre-commit"
 brew "glow"
+brew "efm-langserver"
+brew "pyright"
 
 # Go
 brew "gopls"
