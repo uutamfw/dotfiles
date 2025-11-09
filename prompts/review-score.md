@@ -15,9 +15,10 @@ description: Score code review comments
 ## useful commands
 
 ```
-gh pr view $1 --comments
-gh pr view $1 --json reviews
-gh api repos/{xxx}/{project}/pulls/$1/reviews
+cd {project directory} && gh pr view 8 --comments
+cd {project directory} && gh pr view $1 --comments
+cd {project directory} && gh pr view $1 --json reviews
+cd {project directory} && gh api repos/{xxx}/{project}/pulls/$1/reviews
 ```
 
 ## docs/review-score.md should be considered in the following perspectives
