@@ -10,9 +10,9 @@ description: Review code based on diffs
 
 - Read diffs with `git diff` commands
 - Review diffs
-- Create/update review.md in the current directory that you're working on
+- Create/update docs/review.md in the current directory that you're working on
 
-## What review.md should contain
+## What docs/review.md should contain
 
 - Score (up to 100)
 - Short summary
