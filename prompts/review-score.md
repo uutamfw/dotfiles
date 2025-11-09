@@ -15,7 +15,24 @@ description: Score code review comments
 ## useful commands
 
 ```
-cd {project directory} && gh pr view 8 --comments
+gh pr view $1 --comments
+gh pr view $1 --comments
+gh pr view $1 --json reviews
+gh api repos/{xxx}/{project}/pulls/$1/reviews
+```
+
+If it fails due to the following error, 
+
+```
+Ran gh pr view $1 --comments
+  └ error connecting to api.github.com
+    check your internet connection or https://githubstatus.com
+```
+
+try to fetch with the following commands (you may need to run commands out of sandbox)
+
+```
+cd {project directory} && gh pr view $1 --comments
 cd {project directory} && gh pr view $1 --comments
 cd {project directory} && gh pr view $1 --json reviews
 cd {project directory} && gh api repos/{xxx}/{project}/pulls/$1/reviews
