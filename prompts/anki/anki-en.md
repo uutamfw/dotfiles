@@ -51,7 +51,7 @@ When you input an English sentence, I will provide:
    - Focus on challenging elements (e.g., "really into" in "I'm really into it")
    - Skip basic words (I'm, it) unless they have special usage
    - Explain why specific prepositions or constructions are used
-8. **Additional Trivia** - Extra cultural or linguistic insights (in English with Japanese translation)
+8. **Additional Trivia** - Extra cultural or linguistic insights (英語と日本語でそれぞれ記載してください)
 
 ### For Japanese Input (e.g., "了解しました")
 
@@ -95,7 +95,7 @@ curl -X POST https://langup-prod.onrender.com/generate-speech/ \
 - **Example**: Multiple example sentences with translations
 - **Parse**: The part of speech information
 - **Use case**: The contexts where it's used
-- **In addition**: The trivia information
+- **In addition**: The trivia information (日本語と英語で記載)
 - **Synonyms**: The synonyms with explanations
 
 ### For Sentences/Phrases:
@@ -105,7 +105,7 @@ curl -X POST https://langup-prod.onrender.com/generate-speech/ \
 - **Example**: The Japanese translation of the input sentence
 - **Parse**: The grammatical structure analysis
 - **Use case**: The contexts where the phrase is used
-- **In addition**: The structural analysis and trivia
+- **In addition**: The structural analysis and trivia (日本語と英語で記載)
 - **Synonyms**: Alternative expressions with differences
 
 ## Anki Integration
@@ -168,7 +168,7 @@ curl localhost:8765 -X POST -d '{
         "Example": "Please drain the pasta / パスタの水を切ってください\nThe swamp was drained to create farmland / 沼地は農地を作るために排水された",
         "Parse": "Verb, Noun",
         "Use case": "Removing liquids, depleting resources",
-        "In addition": "From Old English drehnian",
+        "In addition": "(日本語と英語で記載)",
         "Synonyms": "empty, deplete, exhaust"
       },
       "audio": [{
@@ -196,7 +196,7 @@ curl localhost:8765 -X POST -d '{
         "Example": "彼の成績不振により、アシスタントマネージャーに降格された。",
         "Parse": "Subject + past verb phrase + prepositional result",
         "Use case": "HR discussions, performance reviews",
-        "In addition": "Cause-effect business language pattern",
+        "In addition": "(日本語と英語で記載)",
         "Synonyms": "resulted in, caused, brought about"
       },
       "audio": [{
