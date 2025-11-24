@@ -68,6 +68,7 @@ brew "pre-commit"
 brew "glow"
 brew "efm-langserver"
 brew "pyright"
+brew "astro"
 
 # Go
 brew "gopls"
