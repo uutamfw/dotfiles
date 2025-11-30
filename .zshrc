@@ -426,3 +426,6 @@ export PATH="/Users/yutaaoki/.codeium/windsurf/bin:$PATH"
 # alias claude="/Users/yutaaoki/.claude/local/claude"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/yutaaoki/.antigravity/antigravity/bin:$PATH"
