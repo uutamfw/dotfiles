@@ -185,6 +185,8 @@ alias cdd='cd ~/dotfiles'
 ## mu
 alias cdv='cd ~/mu-muc-vscode'
 alias cdg='cd ~/mu-muc-app-service'
+alias cdg2='cd ~/mu-muc-app-service2'
+alias cdg3='cd ~/mu-muc-app-service3'
 
 ## Surfingkeys-conf
 alias cdm='cd ~/surfingkeys-conf'
