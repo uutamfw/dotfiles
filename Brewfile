@@ -132,6 +132,7 @@ cask "font-0xproto-nerd-font"
 cask "font-go-mono-nerd-font"
 cask "chatgpt-atlas"
 cask "codex"
+cask "antigravity"
 
 # WezTerm
 tap "wez/wezterm"
