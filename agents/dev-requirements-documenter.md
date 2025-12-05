@@ -1,5 +1,5 @@
 ---
-name: requirements-documenter
+name: dev-requirements-documenter
 description: Use this agent when the user wants to document requirements in docs/goal.md. This agent should be used when users describe what they want to build, discuss project goals, or need help organizing and documenting their requirements. The agent focuses on capturing 'what' needs to be achieved rather than 'how' it should be implemented.\n\nExamples:\n\n<example>\nContext: User describes a new feature they want to build\nuser: "ユーザーがログインできる機能が欲しい"\nassistant: "要件をdocs/goal.mdに記載するため、requirements-documenterエージェントを使用します"\n<commentary>\nユーザーが新しい機能の要件を述べているため、requirements-documenterエージェントを使用して要件を整理し、docs/goal.mdに記載します。\n</commentary>\n</example>\n\n<example>\nContext: User wants to organize their project goals\nuser: "このプロジェクトの目標を整理したい"\nassistant: "プロジェクトの目標と要件を整理するため、requirements-documenterエージェントを起動します"\n<commentary>\nユーザーがプロジェクトの目標整理を希望しているため、requirements-documenterエージェントを使用して要件を明確化し、文書化します。\n</commentary>\n</example>\n\n<example>\nContext: User mentions they need documentation for their requirements\nuser: "今考えている機能をドキュメントにまとめてほしい"\nassistant: "Task toolを使用してrequirements-documenterエージェントを起動し、要件をdocs/goal.mdに記載します"\n<commentary>\nユーザーが機能のドキュメント化を依頼しているため、requirements-documenterエージェントを使用します。\n</commentary>\n</example>
 model: sonnet
 color: cyan

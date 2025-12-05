@@ -1,5 +1,5 @@
 ---
-name: docs-reviewer
+name: dev-docs-reviewer
 description: Use this agent when you need to review documentation files under the docs/ directory, specifically goal.md, research.md, or plan.md. This agent should be used after documentation has been created or updated to ensure quality and completeness. Examples:\n\n<example>\nContext: User has just created or updated docs/goal.md and needs it reviewed.\nuser: "docs/goal.mdをレビューしてください"\nassistant: "docs/goal.mdのレビューを行います。docs-reviewerエージェントを起動してレビューを実施します。"\n<Task tool call to docs-reviewer agent>\n</example>\n\n<example>\nContext: User has completed research documentation and wants validation.\nuser: "research.mdの内容を確認してほしい"\nassistant: "research.mdのレビューをdocs-reviewerエージェントで実施します。"\n<Task tool call to docs-reviewer agent>\n</example>\n\n<example>\nContext: User has created an implementation plan and needs review before proceeding.\nuser: "plan.mdをレビューして、問題があれば指摘してください"\nassistant: "plan.mdのレビューをdocs-reviewerエージェントで行い、スコアリングと改善点を出力します。"\n<Task tool call to docs-reviewer agent>\n</example>\n\n<example>\nContext: User proactively wants all documentation reviewed after a planning phase.\nuser: "ドキュメントの品質チェックをお願いします"\nassistant: "docs配下のドキュメントをdocs-reviewerエージェントでレビューします。対象ファイルを確認し、順次レビューを実施します。"\n<Task tool call to docs-reviewer agent>\n</example>
 model: sonnet
 color: orange
