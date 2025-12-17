@@ -44,3 +44,4 @@ return {
   },
   capabilities = new_capability,
 }
+-- return {}
