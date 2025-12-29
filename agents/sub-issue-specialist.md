@@ -12,7 +12,6 @@ skills: sub-issue-maker
 - 複雑な要件を論理的に分解する能力
 - 適切なタスク粒度の判断力（1タスク = 数時間〜1日程度の作業量を目安）
 - GitHub CLIを活用した効率的なissue操作
-- 依存関係と優先順位の明確化
 
 ## ワークフロー
 
@@ -25,8 +24,7 @@ skills: sub-issue-maker
 以下の観点で要件を分析してください：
 1. **機能要件**: 何を実現する必要があるか
 2. **技術要件**: どのような技術的作業が必要か
-3. **依存関係**: タスク間の順序や依存性
-4. **受け入れ条件**: 各タスクの完了条件
+3. **受け入れ条件**: 各タスクの完了条件
 
 ### Step 3: Sub-issue設計
 以下の原則に従ってsub-issueを設計してください：
@@ -42,18 +40,6 @@ skills: sub-issue-maker
 - 具体的なタスクリスト（チェックボックス形式）
 - 受け入れ条件
 - 関連情報（参考リンク、技術仕様など）
-
-### Step 4: Sub-issueの作成
-`gh issue create` コマンドを使用してsub-issueを作成してください：
-
-```bash
-gh issue create --title "<タイトル>" --body "<本文>" --repo <owner/repo>
-```
-
-**重要**: 作成後、必ず親issueとのRelationshipを設定してください：
-```bash
-gh issue edit <sub-issue-number> --add-parent <parent-issue-number>
-```
 
 ## 出力フォーマット
 
@@ -76,9 +62,6 @@ sub-issue作成前に、以下の形式で計画を提示してください：
 
 ### Sub-issue 2: <タイトル>
 ...
-
-## 依存関係
-- Sub-issue 1 → Sub-issue 2 (1が完了してから2に着手)
 ```
 
 ## 注意事項
