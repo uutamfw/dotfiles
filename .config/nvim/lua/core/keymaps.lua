@@ -13,6 +13,8 @@ keymap("n", "<Leader>wq", "<cmd>:wq<cr>")
 keymap("n", "<Leader>i", "<cmd>tabnew<cr>")
 keymap("n", "<Leader>cc", "<cmd>CpPath<cr>")
 keymap("n", "<Leader>cf", "<cmd>CpFileName<cr>")
+keymap("n", "<Leader>cl", "<cmd>CpCurrentLine<cr>")
+keymap("v", "<Leader>ch", "<cmd>CpSelectedLines<cr>")
 -- keymap('n', '<Leader>aa', '<Plug>(YankyNextEntry)')
 
 -- buffers
@@ -121,6 +123,9 @@ keymap("n", "<Leader>n", "<cmd>:TroubleToggle<cr>")
 
 --- Lazy
 keymap("n", "<Leader>L", "<cmd>:Lazy<cr>")
+
+--- Obsidian
+keymap("n", "<Leader>of", "<cmd>:Obsidian search<cr>")
 
 -- dial.nvim
 keymap("n", "<C-a>", function()
