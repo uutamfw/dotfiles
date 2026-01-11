@@ -33,21 +33,37 @@ api.nvim_create_autocmd({ "BufReadPost" }, {
 
 -- Obtain the current line
 api.nvim_create_user_command("CpCurrentLine", function()
+  local path = vim.fn.expand("%:p:.")
   local line = vim.api.nvim_win_get_cursor(0)[1]
-  vim.fn.setreg("+", line)
-  vim.notify('Copied "' .. line .. '" to the clipboard!')
+  local copied = line .. " in " .. path
+  vim.fn.setreg("+", copied)
+  vim.notify('Copied "' .. copied .. '" to the clipboard!')
 end, {})
 
 -- Obtain the selected lines
 api.nvim_create_user_command("CpSelectedLines", function()
+  local path = vim.fn.expand("%:p:.")
   local s, e = vim.fn.line("."), vim.fn.line("v")
   --vim.fn.line("."): the current line in visual mode
   --vim.fn.line("v"): the another end of the line in visual mode
   --swap if s is greater than e
   if s > e then s, e = e, s end
   local lines = s .. "-" .. e
-  vim.fn.setreg("+", lines)
-  vim.notify('Copied "' .. lines .. '" to the clipboard!')
+  local copied = lines .. " in " .. path
+  vim.fn.setreg("+", copied)
+  vim.notify('Copied "' .. copied .. '" to the clipboard!')
+end, { range = true })
+
+-- Obtain the selected lines
+api.nvim_create_user_command("CpError", function()
+  local diags = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })
+  if #diags == 0 then return vim.notify("No diagnostics") end
+  local path = vim.fn.expand("%:p:.")
+  local line = vim.api.nvim_win_get_cursor(0)[1]
+  local copied = "Do you know why the following error occurs at " ..
+  line .. " in " .. path .. "?\n\n" .. diags[1].message
+  vim.fn.setreg("+", copied)
+  vim.notify('Copied error messages to the clipboard!')
 end, { range = true })
 
 -- To stop beginning from insert mode

@@ -15,6 +15,7 @@ keymap("n", "<Leader>cc", "<cmd>CpPath<cr>")
 keymap("n", "<Leader>cf", "<cmd>CpFileName<cr>")
 keymap("n", "<Leader>cl", "<cmd>CpCurrentLine<cr>")
 keymap("v", "<Leader>ch", "<cmd>CpSelectedLines<cr>")
+keymap("n", "<Leader>ck", "<cmd>CpError<cr>")
 -- keymap('n', '<Leader>aa', '<Plug>(YankyNextEntry)')
 
 -- buffers
