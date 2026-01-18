@@ -131,6 +131,7 @@ cask "font-go-mono-nerd-font"
 cask "codex"
 cask "antigravity"
 cask "aqua-voice"
+cask "claude"
 
 # WezTerm
 tap "wez/wezterm"
