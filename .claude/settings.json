@@ -1,8 +1,6 @@
 {
   "permissions": {
-    "deny": [
-      "Bash(git add:*)"
-    ]
+    "deny": ["Bash(git add:*)"]
   },
   "hooks": {
     "Notification": [
@@ -22,6 +20,17 @@
           {
             "type": "command",
             "command": "afplay ~/Library/CloudStorage/Dropbox/20251126_zunda/zunda.wav"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun x gh-setup-hooks",
+            "timeout": 120
           }
         ]
       }
