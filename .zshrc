@@ -327,6 +327,15 @@ if [ -f "$HOME/dotfiles/.claude/settings.json" ]; then
     ln -sf "$HOME/dotfiles/.claude/settings.json" "$HOME/.claude/settings.json"
 fi
 
+# symbolic link for Claude agents and skills
+if [ ! -e "$HOME/.claude/agents" ]; then
+    ln -s "$HOME/dotfiles/agents" "$HOME/.claude/agents"
+fi
+
+if [ ! -e "$HOME/.claude/skills" ]; then
+    ln -s "$HOME/dotfiles/skills" "$HOME/.claude/skills"
+fi
+
 # Git diff highlight
 export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
 ### End of Zinit's installer chunk
