@@ -139,6 +139,7 @@ alias gb='git branch'
 # claude code
 alias c='claude'
 alias c-d='claude --dangerously-skip-permissions'
+alias c-p='claude --permission-mode plan'
 
 # cursor-agent
 alias c-a='cursor-agent'
@@ -323,7 +324,7 @@ export PATH="/usr/local/opt/node@14/bin:$PATH"
 # symbolic link for Claude MCP servers
 if [ -f "$HOME/dotfiles/.claude/settings.json" ]; then
     mkdir -p "$HOME/.claude"
-    cp "$HOME/dotfiles/.claude/settings.json" "$HOME/.claude/settings.json"
+    ln -sf "$HOME/dotfiles/.claude/settings.json" "$HOME/.claude/settings.json"
 fi
 
 # Git diff highlight
