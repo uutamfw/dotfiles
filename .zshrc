@@ -188,6 +188,7 @@ alias cdv='cd ~/mu-muc-vscode'
 alias cdg='cd ~/mu-muc-app-service'
 alias cdg2='cd ~/mu-muc-app-service2'
 alias cdg3='cd ~/mu-muc-app-service3'
+alias cdgd='cd ~/mu-copilot-dev'
 
 ## Surfingkeys-conf
 alias cdm='cd ~/surfingkeys-conf'
