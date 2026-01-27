@@ -73,7 +73,7 @@ brew "astro"
 brew "gopls"
 
 cask "appcleaner"
-cask "firefox"˙
+cask "firefox"
 cask "google-chrome"
 cask "mysqlworkbench"
 cask "visual-studio-code"
