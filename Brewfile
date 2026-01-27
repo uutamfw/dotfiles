@@ -73,7 +73,6 @@ brew "astro"
 brew "gopls"
 
 cask "appcleaner"
-cask "docker"
 cask "firefox"
 cask "google-chrome"
 cask "mysqlworkbench"
