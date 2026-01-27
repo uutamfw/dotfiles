@@ -35,7 +35,7 @@ api.nvim_create_autocmd({ "BufReadPost" }, {
 api.nvim_create_user_command("CpCurrentLine", function()
   local path = vim.fn.expand("%:p:.")
   local line = vim.api.nvim_win_get_cursor(0)[1]
-  local copied = line .. " in " .. path
+  local copied = "at " .. line .. " in " .. path
   vim.fn.setreg("+", copied)
   vim.notify('Copied "' .. copied .. '" to the clipboard!')
 end, {})
@@ -49,7 +49,7 @@ api.nvim_create_user_command("CpSelectedLines", function()
   --swap if s is greater than e
   if s > e then s, e = e, s end
   local lines = s .. "-" .. e
-  local copied = lines .. " in " .. path
+  local copied = "at " .. lines .. " in " .. path
   vim.fn.setreg("+", copied)
   vim.notify('Copied "' .. copied .. '" to the clipboard!')
 end, { range = true })
@@ -61,7 +61,7 @@ api.nvim_create_user_command("CpError", function()
   local path = vim.fn.expand("%:p:.")
   local line = vim.api.nvim_win_get_cursor(0)[1]
   local copied = "Do you know why the following error occurs at " ..
-  line .. " in " .. path .. "?\n\n" .. diags[1].message
+      line .. " in " .. path .. "?\n\n" .. diags[1].message
   vim.fn.setreg("+", copied)
   vim.notify('Copied error messages to the clipboard!')
 end, { range = true })
