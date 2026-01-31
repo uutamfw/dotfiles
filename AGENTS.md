@@ -1,0 +1,1 @@
+- The symbolic link should be added to .zshrc instead of bootstrap.sh
