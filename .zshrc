@@ -197,7 +197,7 @@ alias cdm='cd ~/surfingkeys-conf'
 alias cdl='cd ~/LangUp'
 
 ## Hammerspoon
-alias cdh='cd ~/.hammerspoon'
+alias cdh='cd ~/dotfiles/.hammerspoon'
 
 ## astro-blog
 alias cdb='cd ~/astro-blog'
@@ -242,7 +242,7 @@ alias nnz='nvim ~/dotfiles/.zshrc'
 alias nni='nvim ~/dotfiles/.config/nvim/init.lua'
 alias nnb='nvim ~/dotfiles/Brewfile'
 alias nng='nvim ~/dotfiles/.config/ghostty/config'
-alias nnh='nvim ~/.hammerspoon/init.lua'
+alias nnh='nvim ~/dotfiles/.hammerspoon/init.lua'
 
 ## silicon
 alias sl='silicon --from-clipboard -l rs --to-clipboard'
@@ -250,6 +250,11 @@ alias sl='silicon --from-clipboard -l rs --to-clipboard'
 ### symlink the nvim folder when it doesn't exist yet
 if [ ! -e "$HOME/.config/nvim" ]; then
     ln -s "$HOME/dotfiles/.config/nvim" "$HOME/.config/nvim"
+fi
+
+### symlink for Hammerspoon
+if [ ! -e "$HOME/.hammerspoon" ]; then
+    ln -s "$HOME/dotfiles/.hammerspoon" "$HOME/.hammerspoon"
 fi
 
 if [ ! -e "$HOME/Library/Application Support/bottom/bottom.toml" ]; then
