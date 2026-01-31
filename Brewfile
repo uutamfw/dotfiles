@@ -68,6 +68,7 @@ brew "glow"
 brew "efm-langserver"
 brew "pyright"
 brew "astro"
+brew "jj"
 
 # Go
 brew "gopls"
