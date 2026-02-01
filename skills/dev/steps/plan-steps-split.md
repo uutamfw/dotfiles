@@ -34,3 +34,7 @@ If you have no idea at where the main plan markdown is located, use git-grep or 
 Add `Step status` into each file to track how much agents has proceeded tasks. Agents are often executed parallelly.
 
 - Definition: `rules/status.md`
+
+## Initial Status
+
+Set `Step status` to `Ready` when creating each step file.

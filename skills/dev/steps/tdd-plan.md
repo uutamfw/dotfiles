@@ -1,8 +1,6 @@
 ---
 name: tdd-plan
 description: Create implementation plans following TDD methodology with test-first approach. Use this skill when creating implementation plans in plan mode, when user requests TDD-based development, or when planning features that require test-driven development. Ensures tests are planned BEFORE implementation code.
-context: fork
-agent: generalist
 ---
 
 # TDD Implementation Plan

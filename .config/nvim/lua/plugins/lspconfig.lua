@@ -1,12 +1,12 @@
 local lsp_servers = {
   "html",
   "lua_ls",
+  "astro",
   -- "mypy",
   -- "efm",
   "ts_ls",
   "pyright",
   "ruff",
-  "jsonls",
 }
 
 return {

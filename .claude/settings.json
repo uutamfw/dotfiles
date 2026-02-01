@@ -24,6 +24,16 @@
         ]
       }
     ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/dotfiles/hooks/dev-workflow-guard.sh"
+          }
+        ]
+      }
+    ],
     "SessionStart": [
       {
         "hooks": [

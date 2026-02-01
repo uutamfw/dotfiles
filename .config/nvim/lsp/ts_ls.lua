@@ -1,3 +1,6 @@
+-- INFO: consider replacing with typescript-tools.nvim
+-- https://github.com/pmizio/typescript-tools.nvim
+-- https://zenn.dev/sirasagi62/articles/196e0f592a6177
 return {
   cmd = { "typescript-language-server", "--stdio" },
   root_markers = { "package.json" },

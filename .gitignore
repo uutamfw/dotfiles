@@ -1,3 +1,10 @@
 .zshrc.zwc
 .DS_Store
 **/apps.json
+
+# Runtime-generated config (not dotfiles)
+.config/gcloud/
+.config/.config
+.config/.copilot/
+.config/configstore/
+.config/github-copilot/
