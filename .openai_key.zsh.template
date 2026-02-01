@@ -3,3 +3,4 @@ export ANTHROPIC_API_KEY=
 export GROQ_API_KEY=
 export TAVILY_API_KEY=
 export OPENROUTER_API_KEY=
+export GEMINI_API_KEY=
