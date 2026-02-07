@@ -60,6 +60,18 @@
 - `;M` - Mason（LSPマネージャー）
 - `;n` - Trouble（問題一覧）
 
+## Post-Treesitter Migration Checklist
+
+After migrating nvim-treesitter to the `main` branch, verify the following:
+
+1. Open Neovim — lazy.nvim should pull nvim-treesitter from the `main` branch
+2. Run `:TSInstall all` to install parsers
+3. Open a source file and verify syntax highlighting works
+4. Run `:InspectTree` to verify the treesitter parse tree
+5. Test comment toggling (`gc` motions) to verify ts_context_commentstring integration
+6. Open a Go file and verify go.nvim loads without errors
+7. Open a Markdown file and verify render-markdown works
+
 ## インストール方法
 
 1. このリポジトリをクローン：

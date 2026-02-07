@@ -1,19 +1,21 @@
--- INFO: switch branch to main
 -- @see: https://blog.atusy.net/2025/08/10/nvim-treesitter-main-branch/
 return {
   "nvim-treesitter/nvim-treesitter",
-  -- Settings for comment out
-  -- https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#plugins-with-a-pre-comment-hook
+  branch = "main",
+  lazy = false,
+  build = ":TSUpdate",
   dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
   config = function()
+    ---@diagnostic disable-next-line: missing-fields
     require("ts_context_commentstring").setup({
-      highlight = {
-        enable = true,                -- syntax highlightを有効にする
-      },
-      ensure_installed = "all",       -- :TSInstall allと同じ
-      ignore_install = { "phpdoc" },
-      -- ensure_installed = 'maintained' とすることもできる
-      context_commentstring = { enable = true, enable_autocmd = false },
+      enable_autocmd = false,
+    })
+
+    -- Enable treesitter highlighting for all filetypes
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function()
+        pcall(vim.treesitter.start)
+      end,
     })
   end,
 }
