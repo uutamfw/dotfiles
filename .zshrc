@@ -174,7 +174,7 @@ alias cds='cd ~/socialdog/web'
 
 ## Trander
 alias cdt='cd ~/trander'
-alias cdf='cd ~/trander_flutter'
+alias cdf='cd ~/trander-flutter'
 alias cdr='cd ~/trander-rust'
 
 ## WezTerm
@@ -216,6 +216,9 @@ alias cdz='cd ~/zenn'
 
 # Obsidian
 alias cdu='cd ~/uuta'
+
+# u
+alias cduu='cd ~/u'
 
 ## npc
 alias cdp='cd ~/npc-qa-bot'
