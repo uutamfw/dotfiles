@@ -31,6 +31,7 @@ See [workflow.yaml](../dev/schema/workflow.yaml) for YAML structure.
 
 3. Read YAML and check `plan.status`
    - If `Done` → Ask user: "計画は既に完了しています。再作成しますか？"
+   - If `Approved` → Skip to Step 4 (Save to Obsidian)
    - If `In progress` → Resume from where left off
    - If `Ready` → Proceed
 
@@ -43,10 +44,11 @@ See [workflow.yaml](../dev/schema/workflow.yaml) for YAML structure.
 
 ### 3. Create Plan
 
-1. Enter plan mode using EnterPlanMode
+1. Enter plan mode using EnterPlanMode (turn on plan mode only if plan should be made)
 2. Follow TDD structure from [tdd-plan.md](../dev/steps/tdd-plan.md)
    - Red → Green → Refactor order
-3. Get user approval via ExitPlanMode
+3. Update YAML: `plan.status: Approved`
+4. Get user approval via ExitPlanMode
 
 ### 4. Save to Obsidian
 
@@ -69,7 +71,7 @@ Task(subagent_type="generalist",
 ### 6. Finalize
 
 1. Count total steps created
-2. Update YAML:
+2. Update YAML (`Approved` → `Done`):
    ```yaml
    plan:
      status: Done
