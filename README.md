@@ -2,6 +2,24 @@
 
 Personal macOS development environment configuration.
 
+```python
+class GitLabReviewResponse(BaseModel):
+    """RDFormatのレスポンススキーマ"""
+
+    source: Source = Field(
+        default_factory=lambda: Source(name="MU-Copilot"),
+        description="この診断結果のソース情報",
+    )
+    diagnostics: list[Diagnostic] = Field(
+        default_factory=list,
+        description="ツールによって報告された診断",
+    )
+    warnings: list[str] = Field(
+        default_factory=list,
+        description="実行中に発生した警告メッセージ",
+    )
+```
+
 ## Getting Started
 
 ```shell
