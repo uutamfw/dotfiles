@@ -3,7 +3,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   branch = "main",
   lazy = false,
-  build = ":TSUpdate",
+  build = ":TSUpdate | TSInstall markdown markdown_inline python lua bash json yaml",
   dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
   config = function()
     ---@diagnostic disable-next-line: missing-fields
