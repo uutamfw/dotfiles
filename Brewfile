@@ -133,6 +133,7 @@ cask "antigravity"
 cask "aqua-voice"
 cask "claude"
 cask "codex-app"
+cask "claudebar"
 
 # WezTerm
 tap "wez/wezterm"
