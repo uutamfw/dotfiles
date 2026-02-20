@@ -1,6 +1,11 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "permissions": {
-    "deny": ["Bash(git add:*)"]
+    "deny": [
+      "Bash(git add:*)"
+    ]
   },
   "hooks": {
     "Notification": [
@@ -20,6 +25,17 @@
           {
             "type": "command",
             "command": "afplay ~/Library/CloudStorage/Dropbox/20251126_zunda/zunda.wav"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/dotfiles/hooks/grammar-check.sh",
+            "timeout": 10
           }
         ]
       }
@@ -46,17 +62,11 @@
       }
     ]
   },
-  "statusLine": {
-    "type": "command",
-    "command": "bun x ccusage statusline --cost-source both",
-    "padding": 0
-  },
   "enabledPlugins": {
     "claude-mem@thedotmack": true,
     "figma@claude-plugins-official": true
   },
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
+  "model": "sonnet"
 }
