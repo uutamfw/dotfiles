@@ -134,6 +134,7 @@ cask "aqua-voice"
 cask "claude"
 cask "codex-app"
 cask "claudebar"
+cask "ovice"
 
 # WezTerm
 tap "wez/wezterm"
