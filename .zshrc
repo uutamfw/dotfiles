@@ -210,6 +210,9 @@ alias cdna2='cd ~/gg-ai-agent-family-2/app'
 alias cdn3='cd ~/gg-ai-agent-family-3'
 alias cdna3='cd ~/gg-ai-agent-family-3/app'
 
+# Enliminal
+alias cde='cd ~/enliminal'
+
 # zenn
 alias cdz='cd ~/zenn'
 # ./run-server.sh -f
