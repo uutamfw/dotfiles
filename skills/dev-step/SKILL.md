@@ -67,6 +67,10 @@ See [workflow.yaml](../dev/schema/workflow.yaml) for YAML structure.
 
 3. Run verification checks defined in step file
 
+:::note warn
+Don't do run git add or commit until user instructed
+:::
+
 ### 4. Complete Step
 
 1. Update step file status to `Done` (in Obsidian)
@@ -83,7 +87,7 @@ See [workflow.yaml](../dev/schema/workflow.yaml) for YAML structure.
      execute:
        status: Done
      ```
-     Report: "全てのstepが完了しました！"
+     → Call `/create-pr` automatically (no user confirmation needed)
 
    - Else:
      Report: "Step {current}/{total} 完了。次のstepに進みますか？"
