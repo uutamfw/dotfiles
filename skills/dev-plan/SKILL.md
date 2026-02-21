@@ -44,11 +44,42 @@ See [workflow.yaml](../dev/schema/workflow.yaml) for YAML structure.
 
 ### 3. Create Plan
 
-1. Enter plan mode using EnterPlanMode (turn on plan mode only if plan should be made)
-2. Follow TDD structure from [tdd-plan.md](../dev/steps/tdd-plan.md)
-   - Red → Green → Refactor order
+**DO NOT use EnterPlanMode/ExitPlanMode.** Instead, replicate the same workflow using subagents directly.
+
+#### 3a. Explore (parallel)
+
+Launch up to 3 Explore subagents in parallel to research the codebase:
+```
+Task(subagent_type="Explore",
+     prompt="[goal.md の内容] + 調査したいコードエリアの指示",
+     description="Explore codebase")
+```
+- 1 agent: タスクが特定ファイルに限定される場合
+- 複数 agents: スコープが広い・複数エリアにまたがる場合
+
+#### 3b. Design
+
+Explore の結果を元に Plan subagent で実装計画を設計:
+```
+Task(subagent_type="Plan",
+     prompt="[goal.md] + [Explore結果] + TDD構造 (Red→Green→Refactor) に従って計画を立てて",
+     description="Design implementation plan")
+```
+- Plan subagent は read-only なのでファイル変更不可
+- TDD 構造: [tdd-plan.md](../dev/steps/tdd-plan.md) を参照
+
+#### 3c. Present & Approve
+
+1. Plan subagent の出力をそのままユーザーに表示
+2. **AskUserQuestion tool** を使って確認:
+   ```
+   Question: "この計画でよいですか？"
+   Options: ["承認する", "修正が必要"]
+   ```
+   - "修正が必要" → ユーザーのフィードバックを受けて 3b からやり直し
+   - "承認する" → 次へ
+
 3. Update YAML: `plan.status: Approved`
-4. Get user approval via ExitPlanMode
 
 ### 4. Save to Obsidian
 
