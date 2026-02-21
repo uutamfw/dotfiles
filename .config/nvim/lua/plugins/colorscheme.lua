@@ -26,7 +26,9 @@ return {
           string = { italic = false },
         },
         on_highlights = function(highlights, colors)
-          -- highlights.Include.fg = colors.red -- Using `red` foreground for Includes
+          highlights["@markup.raw"] = { fg = colors.blue }
+          highlights["@markup.raw.block"] = { fg = colors.fg0 }
+          highlights["@markup.raw.markdown_inline"] = { fg = colors.blue, bg = colors.bg0 }
         end,
       })
     end,

@@ -12,6 +12,7 @@ return {
       completions = { lsp = { enabled = true } },
       code = {
         border = "thick",
+        priority = 0,
       },
     })
   end,
