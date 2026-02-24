@@ -3,9 +3,12 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
-    "deny": [
-      "Bash(git add:*)"
-    ]
+    "allow": [
+      "mcp__codex__codex",
+      "mcp__codex__codex-reply",
+      "mcp__pencil"
+    ],
+    "deny": []
   },
   "hooks": {
     "Notification": [
