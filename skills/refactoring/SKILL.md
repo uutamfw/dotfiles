@@ -22,6 +22,21 @@ The following rules are listed by the order of priorities.
 - Is it possible to write code with better visibility by cutting it out into a separate method?
 - Can loop be improved more? (O(n) > O(n^2) > O(2^n) > O(n!))
 
+## Validate Assumptions Against Downstream Capabilities
+
+Before adding preprocessing or normalization steps, verify that the downstream process doesn't already handle the problem.
+
+**Ask:** "Does the downstream layer already have the capability to handle this without preprocessing?"
+
+If the answer is yes, the upstream processing is redundant and should be removed.
+
+**Examples:**
+- Normalizing input to English before passing to an AI that already handles multilingual input
+- Fetching a "cleaner" version of data when the downstream consumer can work with the original
+- Transforming data into a format that the next step will transform again anyway
+
+**Related smell:** A `try/catch` fallback that almost always fires is a signal that the `try` block's assumption is wrong — the "exception" has become the norm. Treat it as near-dead code.
+
 ## Fat Usecase Avoidance
 
 Usecases should orchestrate operations, not contain business logic. Follow these principles to keep usecases thin and maintainable.
