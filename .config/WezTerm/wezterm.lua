@@ -9,6 +9,7 @@ return {
 	window_background_image_hsb = style.window_background_image_hsb,
 	inactive_pane_hsb = style.inactive_pane_hsb,
 	background = style.background,
+	window_background_gradient = style.window_background_gradient,
 	font_size = style.font_size,
 	line_height = style.line_height,
 	font = style.font,

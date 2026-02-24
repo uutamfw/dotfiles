@@ -30,8 +30,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local title = process_name
 
 	local edge_background = "#0a0a0f"
-	local background = tab.is_active and "#1e2030" or "#141420"
-	local foreground = tab.is_active and "#c8d3f5" or "#545c7e"
+	local background = tab.is_active and "#5fedcc" or "#141420"
+	local foreground = tab.is_active and "#333333" or "#545c7e"
 
 	local left_sep = wezterm.nerdfonts.ple_lower_right_triangle
 	local right_sep = wezterm.nerdfonts.ple_upper_left_triangle
@@ -60,26 +60,6 @@ local style = {
 	window_background_opacity = 0.7,
 	window_base_image_path_hsb = { brightness = 0.8 },
 	inactive_pane_hsb = { saturation = 0.8, brightness = 0.4, hue = 1.3 },
-	-- background = {
-	-- 	{
-	-- 		source = { File = base_image_path .. "/blackhole.gif" },
-	-- 		repeat_x = "Mirror",
-	-- 		-- opacity = 0.8,
-	-- 		vertical_align = "Bottom",
-	-- 		hsb = dimmer,
-	-- 	},
-	-- 	{
-	-- 		source = { File = base_image_path .. "/guy.gif" },
-	-- 		repeat_x = "NoRepeat",
-	-- 		repeat_y_size = "150%",
-	-- 		width = "12%",
-	-- 		height = "30%",
-	-- 		hsb = dimmer,
-	-- 		vertical_offset = "55%",
-	-- 		horizontal_offset = "80%",
-	-- 		attachment = { Parallax = 0.15 },
-	-- 	},
-	-- },
 	font_size = 14.0,
 	line_height = 1.1,
 	font = wezterm.font("NotoSansM Nerd Font Mono", { weight = "Bold" }),
@@ -91,7 +71,9 @@ local style = {
 		active_titlebar_bg = "none",
 	},
 	window_background_gradient = {
-		colors = { "#000000" },
+		orientation = { Radial = { cx = 0.75, cy = 0.75, radius = 1.25 } },
+		colors = { "#1a0533", "#2d1b69", "#4a1942", "#6b2040", "#8b3a1f" },
+		segment_smoothness = 0.5,
 	},
 	colors = {
 		tab_bar = {
