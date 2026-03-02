@@ -30,8 +30,8 @@ All learning files are saved to the Obsidian vault at `~/uuta/Learning/{topic}/`
 ~/uuta/Learning/
   {topic}/
     curriculum.md      # Structured learning plan with TODO checklist
-    lesson-01.md       # Lesson 1 content + exercises
-    lesson-02.md       # Lesson 2 content + exercises
+    lesson-01.md       # Lesson 1 content + quiz
+    lesson-02.md       # Lesson 2 content + quiz
     ...
 ```
 
@@ -50,7 +50,6 @@ Steps:
 2. Divide the curriculum into **5–8 numbered modules**. Each module must include:
    - **Objective**: What the learner will be able to do after completing this module
    - **Key Concepts**: 3–5 core ideas to understand
-   - **Exercises**: 2–3 concrete, output-verifiable tasks
    - **Estimated Time**: Realistic time estimate
 3. Format the curriculum as a markdown TODO checklist (each module is a `- [ ]` item).
 4. Save to `~/uuta/Learning/{topic}/curriculum.md`.
@@ -81,7 +80,6 @@ Brief description of what you will learn and why it matters.
 - [ ] **Module 1: {Title}**
   - Objective: ...
   - Key Concepts: concept1, concept2, concept3
-  - Exercises: Exercise description
   - Estimated Time: X hours
 
 - [ ] **Module 2: {Title}**
@@ -117,7 +115,6 @@ Steps:
    - **Concept explanation** with clear, beginner-friendly prose
    - **Concrete code examples** or worked examples (where applicable)
    - **Common mistakes** to avoid
-   - **Practice exercises**: 2–3 hands-on tasks with clear success criteria (include `**Hint**:` and `**My Answer**: <!-- Write your answer here -->` for each)
 4. Generate 3–5 quiz questions (following the Quiz Generation Rules) and embed a `## Self-Check Quiz` section directly into the lesson file.
 5. Save to `~/uuta/Learning/{topic}/lesson-{N:02d}.md`.
 6. Display the lesson content in the terminal.
@@ -146,24 +143,6 @@ example
 ## Common Mistakes
 - Mistake 1: why it happens and how to avoid it
 - Mistake 2: ...
-
-## Practice Exercises
-
-### Exercise 1: {Title}
-**Task**: Description of what to do
-**Hint**: Optional hint to help you get started
-**Success Criteria**: How to verify you got it right
-
-**My Answer**:
-<!-- Write your answer here -->
-
-### Exercise 2: {Title}
-**Task**: ...
-**Hint**: ...
-**Success Criteria**: ...
-
-**My Answer**:
-<!-- Write your answer here -->
 
 ---
 
@@ -200,8 +179,8 @@ A) ...  B) ...  C) ...  D) ...
 **Goal**: Peer-review the user's submitted practice work, run a quiz gate, and mark the lesson complete only after demonstrated understanding.
 
 Steps:
-1. Instruct the user to fill in their answers directly in the lesson file — in the `## Practice Exercises → **My Answer**` blocks and the `## Self-Check Quiz → **My Answer**` fields — then run `/learn review` again if they haven't done so yet.
-2. Read the current lesson file (`lesson-{N}.md`) — focus on **Key Concepts**, **Common Mistakes**, **Practice Exercises**, and **Self-Check Quiz**.
+1. Instruct the user to fill in their answers directly in the `## Self-Check Quiz → **My Answer**` fields in the lesson file, then run `/learn review` again if they haven't done so yet.
+2. Read the current lesson file (`lesson-{N}.md`) — focus on **Key Concepts**, **Common Mistakes**, and **Self-Check Quiz**.
 3. Review the submitted work like a knowledgeable peer:
    - **Correctness**: Are the answers correct? Point out errors with explanations.
    - **Best Practices**: Highlight idiomatic or better approaches.
@@ -307,7 +286,6 @@ Steps:
 2. Produce a concise summary:
    - Topics covered
    - Key concepts learned
-   - Exercises completed
    - Insights from review feedback
 3. Optionally offer to save the summary as a note in `~/uuta/Learning/{topic}/session-summary.md`.
 
