@@ -25,6 +25,7 @@ printf '%s' "$command" > /tmp/tmux_send.txt
 tmux load-buffer /tmp/tmux_send.txt
 # 3. ペインにペーストする（改行を保ったまま送信）
 tmux paste-buffer -t <ペイン番号>
+sleep 0.5
 # 4. 実行する
 tmux send-keys -t <ペイン番号> C-m
 ```
