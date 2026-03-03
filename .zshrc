@@ -146,6 +146,10 @@ alias c-a='cursor-agent'
 
 # codex
 alias co='codex'
+alias co-d='codex --dangerously-bypass-approvals-and-sandbox'
+
+# qwen
+alias qw='qwen'
 
 # aicommits (settings)
 alias aicd='aicommits config set generate=3 max-length=40 locale=en model=gpt-5-nano'
@@ -350,6 +354,15 @@ fi
 
 if [ ! -e "$HOME/.claude/hooks" ]; then
     ln -s "$HOME/dotfiles/hooks" "$HOME/.claude/hooks"
+fi
+
+# symbolic link for Codex/ChatGPT skills
+mkdir -p "$HOME/.agents"
+if [ -L "$HOME/.agents/skills" ]; then
+    ln -sfn "$HOME/dotfiles/skills" "$HOME/.agents/skills"
+fi
+if [ ! -e "$HOME/.agents/skills" ]; then
+    ln -s "$HOME/dotfiles/skills" "$HOME/.agents/skills"
 fi
 
 if [ ! -e "$HOME/.mcp.json" ]; then
