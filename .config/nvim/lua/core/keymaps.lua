@@ -162,6 +162,7 @@ keymap("n", "gh", "<cmd>Gitsigns prev_hunk<CR>")
 keymap("n", "gl", "<cmd>Gitsigns next_hunk<CR>")
 keymap("n", "gd", "<cmd>Gitsigns diffthis<CR>")
 keymap("n", "gr", "<cmd>Gitsigns reset_hunk<CR>")
+keymap({ "n", "v" }, "gs", "<cmd>Gitsigns stage_hunk<CR>")
 keymap("n", "gv", "<cmd>DiffviewFileHistory %<CR>")
 
 -- Gyazo
