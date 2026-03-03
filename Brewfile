@@ -70,6 +70,7 @@ brew "pyright"
 brew "astro"
 brew "jj"
 brew "fzf"
+brew "qwen-code"
 
 # Go
 brew "gopls"
