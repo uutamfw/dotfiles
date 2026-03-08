@@ -344,10 +344,6 @@ if [ -f "$HOME/dotfiles/.claude/settings.json" ]; then
 fi
 
 # symbolic link for Claude agents and skills
-if [ ! -e "$HOME/.claude/agents" ]; then
-    ln -s "$HOME/dotfiles/agents" "$HOME/.claude/agents"
-fi
-
 if [ ! -e "$HOME/.claude/skills" ]; then
     ln -s "$HOME/dotfiles/skills" "$HOME/.claude/skills"
 fi
