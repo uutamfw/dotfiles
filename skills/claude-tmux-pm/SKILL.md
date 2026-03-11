@@ -13,6 +13,7 @@ allowed-tools: Bash(tmux:*), Bash(gh:*), Bash(git:*)
 - 先頭の未対応 task が `M` または `L` なら、後ろの `S` を飛ばして割り当ててはいけない
 - ブランチ名は必ず `feat/{issue_number}` を使う
 - 1 agent につき 1 task だけを担当させる
+- Claude Code は必ず `--dangerously-skip-permissions` を付けて起動する
 - agent は `git commit` と PR 作成まで行ってよい
 
 ## Procedure
@@ -55,11 +56,11 @@ tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}  #{pane_cur
 
 ### 4. 必要なら Claude Code を起動する
 
-Claude Code の起動コマンドが `claude` で通る前提なら、例えば次を使う。
+Claude Code の起動コマンドが `claude` で通る前提なら、必ず `--dangerously-skip-permissions` を付けて起動する。例えば次を使う。
 
 ```bash
 tmux new-window -n claude-<issue_number> -c <repo_path>
-tmux send-keys -t <target> 'claude' C-m
+tmux send-keys -t <target> 'claude --dangerously-skip-permissions' C-m
 ```
 
 起動コマンドが不明、または `claude` が見つからない場合は、ここで止めてユーザーに確認する。勝手に別コマンドを推測しない。
@@ -148,3 +149,4 @@ gh issue view <issue_number> --repo <owner>/<repo>
 - branch 名に `#` は使わない。必ず `feat/{issue_number}` にする
 - size label は 1 issue につき 1 つを前提にする
 - pane の予約ルールを守り、同じ issue の二重アサインを避ける
+- Claude Code を新規起動する場合は、毎回 `claude --dangerously-skip-permissions` を使う
