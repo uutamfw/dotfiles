@@ -46,6 +46,13 @@ Use the Write tool or Bash to create and update files in `~/uuta/Learning/`.
 **Goal**: Create a structured curriculum and generate all lesson files at once.
 
 Steps:
+0. **Fetch current information** for the topic before designing the curriculum:
+   a. Use WebSearch to find: "{topic} latest features", "{topic} official documentation",
+      "{topic} best practices {current year}", "{topic} release notes"
+   b. Use WebFetch to retrieve key pages (official docs, release notes, changelog)
+   c. Summarize key findings: new APIs, deprecated patterns, current idioms, version-specific features
+   d. Use this research to inform all subsequent curriculum and lesson decisions
+      — do NOT rely solely on training data for topic knowledge
 1. Research the topic: identify official documentation, key concepts, and common learning pitfalls.
 2. Divide the curriculum into **5–8 numbered modules**. Each module must include:
    - **Objective**: What the learner will be able to do after completing this module
