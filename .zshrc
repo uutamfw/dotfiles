@@ -47,13 +47,10 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:$PKG_CONFIG_PAT
 export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PATH="/Users/yutaaoki/.cache/.bun/bin:$PATH"
 
-# Flutter
-export PATH="$PATH:`pwd`/flutter/bin"
-export PATH="$PATH:~/flutter/bin"
-
-# platform-tools
-export ANDROID_HOME=/Users/$USER/Library/Android/sdk
-export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+# Android SDK
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME="$ANDROID_SDK_ROOT"
+export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"
 
 # WezTerm
 export WEZTERM_CONFIG_FILE="$HOME/dotfiles/.config/WezTerm/wezterm.lua"
@@ -253,6 +250,11 @@ alias nni='nvim ~/dotfiles/.config/nvim/init.lua'
 alias nnb='nvim ~/dotfiles/Brewfile'
 alias nng='nvim ~/dotfiles/.config/ghostty/config'
 alias nnh='nvim ~/dotfiles/.hammerspoon/init.lua'
+
+# tmux
+alias tm-s='tmux new -s'
+alias tm-ls='tmux ls'
+alias tm-a='tmux attach -t'
 
 ## silicon
 alias sl='silicon --from-clipboard -l rs --to-clipboard'
