@@ -137,6 +137,7 @@ cask "claude"
 cask "codex-app"
 cask "claudebar"
 cask "ovice"
+cask "android-commandlinetools"
 
 # WezTerm
 tap "wez/wezterm"
