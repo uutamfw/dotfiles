@@ -5,7 +5,7 @@ Personal macOS development environment configuration.
 ## Getting Started
 
 ```shell
-# Initial setup (Homebrew, symlinks, GitHub auth)
+# Initial setup (Homebrew, Rust toolchain, GitHub auth)
 ./bootstrap.sh
 
 # Sync prompts to ~/.codex and ~/.claude
@@ -78,4 +78,4 @@ graph LR
 ```
 
 - `./prompts.sh` copies prompts to both `~/.codex` and `~/.claude/commands`
-- Symlinks (created via `.zshrc`) connect agents, skills, hooks, and settings
+- `.zshrc` ensures the managed symlinks exist for shared config and agent tooling
