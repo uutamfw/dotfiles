@@ -71,6 +71,7 @@ brew "astro"
 brew "jj"
 brew "fzf"
 brew "qwen-code"
+brew "rustup"
 
 # Go
 brew "gopls"
