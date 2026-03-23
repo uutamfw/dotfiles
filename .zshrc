@@ -1,4 +1,17 @@
 ################################
+### theme
+################################
+# Disable instant prompt to prevent stderr from being permanently redirected
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+################################
 ### znap: Zsh plugin manager
 ################################
 
@@ -15,22 +28,11 @@ zstyle ':znap:*' repos-dir ~/.znap/repos
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 # Load plugins (To install and update plugins, run `znap pull` command)
-znap source marlonrichert/zsh-autocomplete
+# znap source marlonrichert/zsh-autocomplete  # disabled: zpty bug corrupts parent shell's stderr
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source rupa/z
 znap source mafredri/zsh-async
-
-################################
-### theme
-################################
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 ################################
 ### PATH
@@ -303,6 +305,18 @@ alias medis="source ~/bin/medis"
 autoload -U compinit
 compinit
 
+# fzf shell integration (completion + Ctrl-T / Ctrl-R / Alt-C bindings)
+source /opt/homebrew/opt/fzf/shell/completion.zsh
+source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+
+# fzf-tab: replace zsh default tab completion with fzf (must be after compinit)
+znap source Aloxaf/fzf-tab
+
+# Switch between completion groups with , and .
+zstyle ':fzf-tab:*' switch-group ',' '.'
+# Use existing completion colors
+zstyle ':fzf-tab:complete:*:*' fzf-flags '--color=bg+:#3c3836'
+
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
@@ -455,7 +469,6 @@ export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
 
 
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
 

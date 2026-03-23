@@ -60,7 +60,7 @@ local style = {
 	window_background_opacity = 0.7,
 	window_base_image_path_hsb = { brightness = 0.8 },
 	inactive_pane_hsb = { saturation = 0.8, brightness = 0.4, hue = 1.3 },
-	font_size = 14.0,
+	font_size = 12.0,
 	line_height = 1.1,
 	font = wezterm.font("NotoSansM Nerd Font Mono", { weight = "Bold" }),
 	macos_window_background_blur = 20,

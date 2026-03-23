@@ -12,7 +12,7 @@ spoon.ShiftIt:bindHotkeys({
 
 local keys = {
   { { "ctrl" }, "P",     "WezTerm" },
-  { { "ctrl" }, "O",     "Brave Browser" },
+  { { "ctrl" }, "O",     "Google Chrome" },
   { { "ctrl" }, "M",     "DBeaver" },
   { { "ctrl" }, "Y",     "Spotify" },
   { { "ctrl" }, "N",     "Anki" },

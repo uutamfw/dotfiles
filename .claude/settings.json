@@ -3,13 +3,10 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
-    "allow": [
-      "mcp__codex__codex",
-      "mcp__codex__codex-reply",
-      "mcp__pencil"
-    ],
+    "allow": ["mcp__codex__codex", "mcp__codex__codex-reply", "mcp__pencil"],
     "deny": []
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "Notification": [
       {
@@ -17,7 +14,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay ~/Library/CloudStorage/Dropbox/20260115_zunda/zunda.wav"
+            "command": "afplay ~/dotfiles/public/ask.wav"
           }
         ]
       }
@@ -27,7 +24,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay ~/Library/CloudStorage/Dropbox/20251126_zunda/zunda.wav"
+            "command": "afplay ~/dotfiles/public/done.wav"
           }
         ]
       }
@@ -70,6 +67,6 @@
     "figma@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-  "model": "sonnet"
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
 }
