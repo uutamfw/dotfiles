@@ -11,6 +11,7 @@ return {
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         json = { "prettier" },
+        astro = { "prettier" },
       },
       format_on_save = {
         timeout_ms = 1500,
