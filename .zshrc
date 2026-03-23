@@ -186,13 +186,6 @@ alias cdw='cd ~/dotfiles/.config/WezTerm'
 ## dotfiles
 alias cdd='cd ~/dotfiles'
 
-## mu
-alias cdv='cd ~/mu-muc-vscode'
-alias cdg='cd ~/mu-muc-app-service'
-alias cdg2='cd ~/mu-muc-app-service2'
-alias cdg3='cd ~/mu-muc-app-service3'
-alias cdgd='cd ~/mu-copilot-dev'
-
 ## Surfingkeys-conf
 alias cdm='cd ~/surfingkeys-conf'
 
@@ -205,13 +198,9 @@ alias cdh='cd ~/dotfiles/.hammerspoon'
 ## astro-blog
 alias cdb='cd ~/astro-blog'
 
-## gg
-alias cdn='cd ~/gg-ai-agent-family'
-alias cdna='cd ~/gg-ai-agent-family/app'
-alias cdn2='cd ~/gg-ai-agent-family-2'
-alias cdna2='cd ~/gg-ai-agent-family-2/app'
-alias cdn3='cd ~/gg-ai-agent-family-3'
-alias cdna3='cd ~/gg-ai-agent-family-3/app'
+## mfw
+alias cdo='cd ~/mfx_banking_app-develop_yokoshin2.0'
+alias cdom='cd ~/mfx_banking_app-develop_yokoshin2.0/main'
 
 # Enliminal
 alias cde='cd ~/enliminal'

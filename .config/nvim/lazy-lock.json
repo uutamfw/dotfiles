@@ -1,5 +1,5 @@
 {
-  "LuaSnip": { "branch": "master", "commit": "dae4f5aaa3574bd0c2b9dd20fb9542a02c10471c" },
+  "LuaSnip": { "branch": "master", "commit": "642b0c595e11608b4c18219e93b88d7637af27bc" },
   "NeoSolarized.nvim": { "branch": "master", "commit": "3c55ad358c062aa4879950c4f83b4deeac6b72df" },
   "SchemaStore.nvim": { "branch": "main", "commit": "bbc9dd7b38f0afde6baae725980cefc1ad554dca" },
   "bufdelete.nvim": { "branch": "master", "commit": "f6bcea78afb3060b198125256f897040538bcb81" },
@@ -21,7 +21,7 @@
   "git-blame.nvim": { "branch": "main", "commit": "5c536e2d4134d064aa3f41575280bc8a2a0e03d7" },
   "git-conflict.nvim": { "branch": "main", "commit": "4bbfdd92d547d2862a75b4e80afaf30e73f7bbb4" },
   "gitsigns.nvim": { "branch": "main", "commit": "7c4faa3540d0781a28588cafbd4dd187a28ac6e3" },
-  "go.nvim": { "branch": "master", "commit": "01a6de99120a3b4abaf589d803631d02c44b4d25" },
+  "go.nvim": { "branch": "master", "commit": "51a6f3b19b59f6e8e5d8d06aa23704ff2b6ed6bd" },
   "guihua.lua": { "branch": "master", "commit": "fdca486468a5d94676477917872767b5e67a2b4c" },
   "gyazo.vim": { "branch": "master", "commit": "236c82140b0b04337cbfa9f31ad38d536e1d88c8" },
   "hacker.nvim": { "branch": "main", "commit": "7cf7189f488ea3a81d4b75b44d7c38663475c7a3" },
