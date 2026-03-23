@@ -22,7 +22,6 @@ brew "docker-compose"
 brew "nvm"
 brew "yarn"
 brew "composer"
-brew "golangci-lint"
 brew "mockery"
 brew "gomodifytags"
 brew "grc"
@@ -70,6 +69,8 @@ brew "qwen-code"
 
 # Go
 brew "gopls"
+brew "goimports"
+brew "golangci-lint"
 
 cask "appcleaner"
 cask "firefox"
